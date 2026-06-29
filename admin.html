@@ -124,6 +124,8 @@ table.data tr:hover td{background:#f5f9f7;}
 .badge.pending{background:#FEF3C7;color:#92400E;}
 .badge.confirmed{background:#D1FAE5;color:#065F46;}
 .badge.paid{background:#DBEAFE;color:#1E40AF;}
+.badge.trial{background:#E0E7FF;color:#3730A3;}
+.badge.ended{background:#FEE2E2;color:#991B1B;}
 
 /* ---- NOTICE BOARD ---- */
 .notice-form{display:flex;flex-direction:column;gap:12px;}
@@ -219,9 +221,10 @@ table.data tr:hover td{background:#f5f9f7;}
       <!-- DASHBOARD -->
       <div class="tab-content active" id="tab-dashboard">
         <h2 style="margin-bottom:20px">Dashboard</h2>
+        <div id="trialAlert" style="display:none;background:#FEF3C7;border:1.5px solid #E67E22;color:#92400E;border-radius:12px;padding:14px 18px;margin-bottom:20px;font-size:.9rem"></div>
         <div class="stats-row">
           <div class="stat-card"><div class="num" id="statTotal">0</div><div class="lbl">Total Enrollments</div></div>
-          <div class="stat-card gold"><div class="num" id="statPending">0</div><div class="lbl">Pending</div></div>
+          <div class="stat-card gold"><div class="num" id="statPending">0</div><div class="lbl">Pending / Trial</div></div>
           <div class="stat-card green"><div class="num" id="statConfirmed">0</div><div class="lbl">Confirmed</div></div>
           <div class="stat-card"><div class="num" id="statPaid">0</div><div class="lbl">Paid</div></div>
         </div>
@@ -377,15 +380,41 @@ function saveEnrollments(arr){
 }
 
 function badgeHtml(status){
-  const cls = status==='Confirmed'?'confirmed':status==='Paid'?'paid':'pending';
+  let cls='pending';
+  if(status==='Confirmed') cls='confirmed';
+  else if(status==='Paid') cls='paid';
+  else if(status==='Free Trial') cls='trial';
+  else if(status==='Trial Ended') cls='ended';
   return `<span class="badge ${cls}">${status}</span>`;
 }
 
+// Check for expired free trials and flag them
+function checkExpiredTrials(){
+  const arr=getEnrollments(); let changed=false; const now=new Date();
+  arr.forEach(e=>{
+    if(e.status==='Free Trial' && e.trialEnd && new Date(e.trialEnd) < now){
+      e.status='Trial Ended'; changed=true;
+    }
+  });
+  if(changed) saveEnrollments(arr);
+  // Show alert banner if any trials ended
+  const ended=arr.filter(e=>e.status==='Trial Ended');
+  const banner=document.getElementById('trialAlert');
+  if(banner){
+    if(ended.length){
+      banner.style.display='block';
+      banner.innerHTML='⏰ <strong>'+ended.length+' free trial(s) have ended.</strong> Contact these students to collect payment: '+
+        ended.map(e=>e.studentName+' ('+e.whatsapp+')').join(', ');
+    } else { banner.style.display='none'; }
+  }
+}
+
 function loadDashboard(){
+  checkExpiredTrials();
   const data = getEnrollments();
   document.getElementById('statTotal').textContent = data.length;
-  document.getElementById('statPending').textContent = data.filter(d=>d.status==='Pending').length;
-  document.getElementById('statConfirmed').textContent = data.filter(d=>d.status==='Confirmed').length;
+  document.getElementById('statPending').textContent = data.filter(d=>d.status==='Pending'||d.status==='Free Trial').length;
+  document.getElementById('statConfirmed').textContent = data.filter(d=>d.status==='Confirmed'||d.status==='Trial Ended').length;
   document.getElementById('statPaid').textContent = data.filter(d=>d.status==='Paid').length;
 
   const tb = document.getElementById('recentBody');
