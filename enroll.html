@@ -142,17 +142,56 @@
             <textarea name="message" id="message" rows="3" placeholder="Any questions or special requirements?"></textarea>
           </div>
           <input type="text" name="_gotcha" style="display:none">
-          <button type="submit" class="btn-submit" id="submitBtn">Next — Proceed to Payment →</button>
+          <button type="submit" class="btn-submit" id="submitBtn">Next — Continue →</button>
           <p class="form-note">By submitting, you agree to be contacted by our admissions team about your enrollment.</p>
         </form>
       </div>
     </div>
 
-    <!-- STEP 2: PAYMENT -->
+    <!-- STEP 2: CHOOSE OPTION -->
     <div id="step2" style="display:none">
       <div class="payment-card">
         <div class="back-link" onclick="goBack()" style="cursor:pointer">← Back to Enrollment Form</div>
-        <h2>Step 2 — Pay Your First Month Fee</h2>
+        <h2>Step 2 — Choose How to Start</h2>
+        <p class="fc-sub">You can either pay your first month's fee now, or start with a free 3-day trial. Pick whichever suits you best.</p>
+
+        <!-- TWO OPTION CARDS -->
+        <div class="option-grid">
+          <div class="option-card" onclick="chooseOption('trial')">
+            <div class="option-icon">🎁</div>
+            <h3>Get a Free Trial</h3>
+            <div class="option-price">FREE<span> for 3 days</span></div>
+            <ul class="option-list">
+              <li>✓ 3 days of free classes</li>
+              <li>✓ Meet your teacher first</li>
+              <li>✓ No payment required now</li>
+              <li>✓ Decide after the trial</li>
+            </ul>
+            <div class="option-btn ghost">Start Free Trial →</div>
+          </div>
+
+          <div class="option-card featured-opt" onclick="chooseOption('pay')">
+            <div class="opt-tag">Recommended</div>
+            <div class="option-icon">💳</div>
+            <h3>Pay & Enroll Now</h3>
+            <div class="option-price">Pay Fee<span> & start fully</span></div>
+            <ul class="option-list">
+              <li>✓ Full enrollment confirmed</li>
+              <li>✓ Priority teacher matching</li>
+              <li>✓ Regular monthly classes</li>
+              <li>✓ Progress reports included</li>
+            </ul>
+            <div class="option-btn">Pay Fee Now →</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- STEP 2B: PAYMENT (shown if "Pay Now" chosen) -->
+    <div id="step2pay" style="display:none">
+      <div class="payment-card">
+        <div class="back-link" onclick="setStep(2)" style="cursor:pointer">← Back to Options</div>
+        <h2>Pay Your First Month Fee</h2>
         <p class="fc-sub">Transfer your course fee to our Meezan Bank account below, then upload your payment screenshot to complete enrollment.</p>
 
         <div class="bank-box">
@@ -163,7 +202,6 @@
           <div class="bank-row iban"><span>IBAN</span><strong>PK73MEZN0008020114146360</strong></div>
         </div>
 
-        <!-- Upload screenshot -->
         <div id="uploadSection">
           <p style="font-weight:700;color:var(--ink);margin-bottom:4px;font-size:.92rem">📸 Upload Payment Screenshot</p>
           <p style="font-size:.83rem;margin-bottom:12px">After bank transfer, upload the screenshot here to complete your enrollment.</p>
@@ -181,6 +219,27 @@
 
         <div class="or-divider"><span>OR</span></div>
         <a href="https://wa.me/923052972902?text=Assalamu%20Alaikum%2C%20I%20have%20completed%20enrollment%20and%20my%20fee%20transfer.%20Please%20find%20my%20payment%20screenshot." class="btn-wa" target="_blank">💬 Send Screenshot via WhatsApp Instead</a>
+      </div>
+    </div>
+
+    <!-- STEP 2C: FREE TRIAL CONFIRMED -->
+    <div id="step2trial" style="display:none">
+      <div class="payment-card">
+        <div class="success-box">
+          <div class="s-icon">🎁</div>
+          <h3>Free 3-Day Trial Activated!</h3>
+          <p style="margin-bottom:16px">Jazak Allah Khair — your <strong>free 3-day trial</strong> has been booked. Our team will contact you within <strong>24 hours</strong> to schedule your first class.</p>
+          <div class="trial-countdown" id="trialCountdown">
+            <div class="tc-label">Your free trial ends on:</div>
+            <div class="tc-date" id="trialEndDate">—</div>
+          </div>
+          <div style="background:var(--gold3);border:1.5px solid var(--gold);border-radius:12px;padding:16px 20px;margin:18px 0;text-align:left">
+            <p style="font-size:.85rem;color:var(--ink);font-weight:700;margin-bottom:8px">⏰ After your 3-day trial:</p>
+            <p style="font-size:.83rem;margin-bottom:6px">You will receive a reminder on WhatsApp to continue with paid monthly classes. To keep learning, simply pay your first month's fee.</p>
+          </div>
+          <a href="https://wa.me/923052972902?text=Assalamu%20Alaikum%2C%20I%20want%20to%20continue%20after%20my%20free%20trial%20and%20pay%20the%20monthly%20fee." class="btn-wa" target="_blank" style="margin-bottom:10px">💬 Contact Us on WhatsApp</a>
+          <a href="index.html" class="btn-em" style="display:inline-flex">← Return to Home</a>
+        </div>
       </div>
     </div>
 
@@ -244,8 +303,12 @@ if(paramCourse){
 
 // Stepper helpers
 function setStep(n){
+  // hide all sub-screens
+  ['step1','step2','step2pay','step2trial','step3'].forEach(id=>{
+    const el=document.getElementById(id); if(el) el.style.display='none';
+  });
+  document.getElementById('step'+n).style.display='block';
   [1,2,3].forEach(i=>{
-    document.getElementById('step'+i).style.display = i===n?'block':'none';
     const sc=document.getElementById('sc'+i), sl=document.getElementById('sl'+i);
     if(i<n){sc.classList.add('done');sc.textContent='✓';sc.classList.remove('active');sl.classList.remove('active');}
     else if(i===n){sc.classList.add('active');sc.classList.remove('done');sc.textContent=i;sl.classList.add('active');}
@@ -256,6 +319,56 @@ function setStep(n){
 }
 
 function goBack(){ setStep(1); }
+
+// Choose payment option (Free Trial or Pay Now)
+function chooseOption(type){
+  // mark step 2 as done in the stepper
+  [1,2,3].forEach(i=>{
+    const sc=document.getElementById('sc'+i), sl=document.getElementById('sl'+i);
+    if(i<=2){sc.classList.add('done');sc.textContent='✓';sc.classList.remove('active');}
+  });
+  ['step1','step2','step2pay','step2trial','step3'].forEach(id=>{
+    document.getElementById(id).style.display='none';
+  });
+
+  if(type==='pay'){
+    document.getElementById('step2pay').style.display='block';
+  } else {
+    // FREE TRIAL — set up auto 3-day system
+    activateFreeTrial();
+    document.getElementById('step2trial').style.display='block';
+  }
+  window.scrollTo({top:0,behavior:'smooth'});
+}
+
+// FREE TRIAL auto-system (3 days)
+function activateFreeTrial(){
+  const now=new Date();
+  const end=new Date(now.getTime() + 3*24*60*60*1000); // +3 days
+  // Show end date
+  document.getElementById('trialEndDate').textContent =
+    end.toLocaleDateString('en-PK',{weekday:'long',year:'numeric',month:'long',day:'numeric'});
+
+  // Update saved entry
+  const arr=JSON.parse(localStorage.getItem('ah_enrollments')||'[]');
+  const idx=arr.findIndex(e=>e.id===savedEntry.id);
+  if(idx>-1){
+    arr[idx].status='Free Trial';
+    arr[idx].trialStart=now.toISOString();
+    arr[idx].trialEnd=end.toISOString();
+    arr[idx].trialNotified=false;
+    localStorage.setItem('ah_enrollments',JSON.stringify(arr));
+  }
+
+  // Notify academy via Formspree that a free trial started
+  fetch('https://formspree.io/f/maqgynba',{method:'POST',
+    body:JSON.stringify({_subject:'FREE TRIAL Started — '+savedEntry.studentName,
+      student:savedEntry.studentName, whatsapp:savedEntry.whatsapp,
+      course:savedEntry.course, email:savedEntry.email,
+      trial_ends:end.toLocaleString('en-PK'),
+      note:'Student started a FREE 3-DAY TRIAL. Follow up after trial ends for payment.'}),
+    headers:{'Content-Type':'application/json','Accept':'application/json'}}).catch(()=>{});
+}
 
 // FORM SUBMIT
 document.getElementById('enrollForm').addEventListener('submit',async function(e){
@@ -277,8 +390,8 @@ document.getElementById('enrollForm').addEventListener('submit',async function(e
       const arr=JSON.parse(localStorage.getItem('ah_enrollments')||'[]');
       arr.unshift(savedEntry); localStorage.setItem('ah_enrollments',JSON.stringify(arr));
       setStep(2);
-    } else { btn.disabled=false; btn.textContent='Next — Proceed to Payment →'; alert('Error. Please try again or WhatsApp us.'); }
-  } catch(err){ btn.disabled=false; btn.textContent='Next — Proceed to Payment →'; alert('Network error. Please WhatsApp us at +92 305 2972902'); }
+    } else { btn.disabled=false; btn.textContent='Next — Continue →'; alert('Error. Please try again or WhatsApp us.'); }
+  } catch(err){ btn.disabled=false; btn.textContent='Next — Continue →'; alert('Network error. Please WhatsApp us at +92 305 2972902'); }
 });
 
 // Screenshot preview
