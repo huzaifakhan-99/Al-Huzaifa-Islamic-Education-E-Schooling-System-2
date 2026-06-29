@@ -1,0 +1,506 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Admin Panel — Al Huzaifa Academy</title>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink:#0F2A24; --em:#1C5C4A; --em2:#2F7C64;
+  --gold:#C8932B; --gold2:#E6C878;
+  --bg:#F4F6F8; --card:#fff; --line:#E2E8E5;
+  --danger:#C0392B; --success:#27AE60; --warn:#E67E22;
+  --body:'Outfit',sans-serif;
+}
+*{box-sizing:border-box;margin:0;padding:0;}
+body{font-family:var(--body);background:var(--bg);color:var(--ink);min-height:100vh;}
+a{color:inherit;text-decoration:none;}
+
+/* ---- LOGIN ---- */
+.login-wrap{
+  min-height:100vh;display:flex;align-items:center;justify-content:center;
+  background:var(--ink);
+}
+.login-box{
+  background:#fff;border-radius:18px;padding:42px 36px;width:100%;max-width:380px;
+  text-align:center;
+}
+.login-logo{
+  width:56px;height:56px;background:var(--ink);border-radius:14px;
+  display:flex;align-items:center;justify-content:center;margin:0 auto 18px;
+}
+.login-logo span{
+  width:26px;height:26px;position:relative;display:inline-block;
+}
+.login-logo span::before,.login-logo span::after{
+  content:"";position:absolute;inset:0;border:2px solid var(--gold2);border-radius:3px;
+}
+.login-logo span::after{transform:rotate(45deg);}
+.login-box h2{font-size:1.25rem;margin-bottom:4px;}
+.login-box p{font-size:.85rem;color:#666;margin-bottom:24px;}
+.login-box input{
+  width:100%;padding:13px 15px;border:1.5px solid var(--line);border-radius:10px;
+  font-family:var(--body);font-size:.95rem;margin-bottom:14px;
+}
+.login-box input:focus{border-color:var(--em);outline:none;}
+.login-box button{
+  width:100%;background:var(--em);color:#fff;border:none;
+  padding:14px;border-radius:10px;font-size:1rem;font-weight:600;
+  cursor:pointer;transition:background .2s;
+}
+.login-box button:hover{background:var(--em2);}
+.login-error{color:var(--danger);font-size:.82rem;margin-top:8px;display:none;}
+
+/* ---- LAYOUT ---- */
+.admin-wrap{display:none;min-height:100vh;flex-direction:column;}
+.top-bar{
+  background:var(--ink);color:#fff;
+  display:flex;align-items:center;justify-content:space-between;
+  padding:0 28px;height:60px;position:sticky;top:0;z-index:10;
+}
+.top-bar-left{display:flex;align-items:center;gap:14px;}
+.top-logo{
+  width:36px;height:36px;background:rgba(255,255,255,.1);
+  border-radius:9px;display:flex;align-items:center;justify-content:center;
+}
+.top-logo span{width:16px;height:16px;position:relative;display:inline-block;}
+.top-logo span::before,.top-logo span::after{
+  content:"";position:absolute;inset:0;border:1.5px solid var(--gold2);border-radius:2px;
+}
+.top-logo span::after{transform:rotate(45deg);}
+.top-title{font-weight:700;font-size:1rem;}
+.top-sub{font-size:.72rem;color:rgba(255,255,255,.55);}
+.btn-logout{
+  background:rgba(255,255,255,.1);color:#fff;border:none;
+  padding:8px 16px;border-radius:8px;cursor:pointer;font-size:.82rem;
+}
+.btn-logout:hover{background:rgba(255,255,255,.18);}
+
+.main{display:flex;flex:1;}
+.sidebar{
+  width:220px;background:var(--card);border-right:1px solid var(--line);
+  padding:20px 0;flex-shrink:0;
+}
+.nav-item{
+  display:flex;align-items:center;gap:10px;
+  padding:11px 22px;font-size:.9rem;font-weight:500;color:#555;
+  cursor:pointer;border-left:3px solid transparent;
+  transition:all .15s;
+}
+.nav-item:hover{background:#f0f4f2;color:var(--em);}
+.nav-item.active{background:#EBF5F1;color:var(--em);border-left-color:var(--em);font-weight:600;}
+.nav-icon{font-size:1rem;width:20px;text-align:center;}
+
+.content{flex:1;padding:28px;overflow-y:auto;}
+
+/* ---- STATS ---- */
+.stats-row{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-bottom:28px;}
+.stat-card{
+  background:var(--card);border:1px solid var(--line);border-radius:14px;
+  padding:20px 18px;
+}
+.stat-card .num{font-size:1.8rem;font-weight:700;color:var(--ink);}
+.stat-card .lbl{font-size:.78rem;color:#777;margin-top:4px;}
+.stat-card.gold .num{color:var(--gold);}
+.stat-card.green .num{color:var(--success);}
+
+/* ---- TABLES ---- */
+.section-card{
+  background:var(--card);border:1px solid var(--line);border-radius:14px;
+  padding:22px 20px;margin-bottom:22px;
+}
+.section-card h3{font-size:1rem;margin-bottom:16px;padding-bottom:10px;border-bottom:1px solid var(--line);}
+.table-wrap{overflow-x:auto;}
+table.data{width:100%;border-collapse:collapse;font-size:.85rem;}
+table.data th{text-align:left;padding:9px 12px;font-size:.72rem;text-transform:uppercase;letter-spacing:.05em;color:#888;background:#f9fafb;border-bottom:1px solid var(--line);}
+table.data td{padding:11px 12px;border-bottom:1px solid var(--line);vertical-align:middle;}
+table.data tr:last-child td{border-bottom:none;}
+table.data tr:hover td{background:#f5f9f7;}
+
+.badge{
+  display:inline-block;padding:3px 10px;border-radius:999px;font-size:.72rem;font-weight:600;
+}
+.badge.pending{background:#FEF3C7;color:#92400E;}
+.badge.confirmed{background:#D1FAE5;color:#065F46;}
+.badge.paid{background:#DBEAFE;color:#1E40AF;}
+
+/* ---- NOTICE BOARD ---- */
+.notice-form{display:flex;flex-direction:column;gap:12px;}
+.notice-form input,.notice-form textarea,.notice-form select{
+  padding:11px 13px;border:1.5px solid var(--line);border-radius:9px;
+  font-family:var(--body);font-size:.92rem;
+}
+.notice-form input:focus,.notice-form textarea:focus,.notice-form select:focus{
+  border-color:var(--em);outline:none;
+}
+.btn-add{
+  background:var(--em);color:#fff;border:none;
+  padding:12px 22px;border-radius:9px;cursor:pointer;font-size:.9rem;font-weight:600;
+  align-self:flex-start;
+}
+.btn-add:hover{background:var(--em2);}
+.notices-list{display:flex;flex-direction:column;gap:12px;margin-top:4px;}
+.notice-item{
+  background:#f9fafb;border:1px solid var(--line);border-radius:10px;padding:14px 16px;
+  display:flex;justify-content:space-between;align-items:flex-start;gap:12px;
+}
+.notice-item .n-title{font-weight:600;font-size:.9rem;}
+.notice-item .n-body{font-size:.82rem;color:#555;margin-top:4px;}
+.notice-item .n-date{font-size:.72rem;color:#aaa;white-space:nowrap;}
+.btn-del{background:none;border:none;cursor:pointer;color:var(--danger);font-size:1rem;padding:2px 6px;}
+
+/* ---- SETTINGS ---- */
+.settings-grid{display:flex;flex-direction:column;gap:18px;}
+.setting-row{display:flex;align-items:center;justify-content:space-between;padding:16px 0;border-bottom:1px solid var(--line);}
+.setting-row:last-child{border-bottom:none;}
+.setting-label{font-weight:600;font-size:.92rem;}
+.setting-sub{font-size:.78rem;color:#888;margin-top:3px;}
+.setting-row input[type="text"]{
+  border:1.5px solid var(--line);border-radius:8px;padding:9px 12px;
+  font-family:var(--body);font-size:.9rem;width:240px;
+}
+.setting-row input:focus{border-color:var(--em);outline:none;}
+.btn-save{background:var(--gold);color:var(--ink);border:none;padding:11px 22px;border-radius:9px;cursor:pointer;font-weight:600;font-size:.88rem;}
+.btn-save:hover{background:var(--gold2);}
+.btn-danger{background:var(--danger);color:#fff;border:none;padding:9px 18px;border-radius:9px;cursor:pointer;font-weight:600;font-size:.85rem;}
+
+/* ---- TABS hidden ---- */
+.tab-content{display:none;}
+.tab-content.active{display:block;}
+
+@media(max-width:700px){
+  .sidebar{display:none;}
+  .stats-row{grid-template-columns:repeat(2,1fr);}
+}
+</style>
+</head>
+<body>
+
+<!-- ===== LOGIN ===== -->
+<div class="login-wrap" id="loginWrap">
+  <div class="login-box">
+    <div class="login-logo"><span></span></div>
+    <h2>Admin Login</h2>
+    <p>Al Huzaifa Islamic Academy</p>
+    <input type="password" id="pwInput" placeholder="Enter admin password" autocomplete="current-password">
+    <button onclick="doLogin()">Login &rarr;</button>
+    <p class="login-error" id="loginErr">&#x26A0; Incorrect password. Try again.</p>
+  </div>
+</div>
+
+<!-- ===== ADMIN PANEL ===== -->
+<div class="admin-wrap" id="adminWrap">
+
+  <!-- Top bar -->
+  <div class="top-bar">
+    <div class="top-bar-left">
+      <div class="top-logo"><span></span></div>
+      <div>
+        <div class="top-title">Al Huzaifa Academy</div>
+        <div class="top-sub">Admin Panel</div>
+      </div>
+    </div>
+    <button class="btn-logout" onclick="doLogout()">Logout</button>
+  </div>
+
+  <div class="main">
+    <!-- Sidebar -->
+    <div class="sidebar">
+      <div class="nav-item active" onclick="showTab('dashboard',this)"><span class="nav-icon">&#x1F4CA;</span> Dashboard</div>
+      <div class="nav-item" onclick="showTab('enrollments',this)"><span class="nav-icon">&#x1F393;</span> Enrollments</div>
+      <div class="nav-item" onclick="showTab('noticeboard',this)"><span class="nav-icon">&#x1F4CB;</span> Notice Board</div>
+      <div class="nav-item" onclick="showTab('settings',this)"><span class="nav-icon">&#x2699;&#xFE0F;</span> Settings</div>
+    </div>
+
+    <!-- Content -->
+    <div class="content">
+
+      <!-- DASHBOARD -->
+      <div class="tab-content active" id="tab-dashboard">
+        <h2 style="margin-bottom:20px">Dashboard</h2>
+        <div class="stats-row">
+          <div class="stat-card"><div class="num" id="statTotal">0</div><div class="lbl">Total Enrollments</div></div>
+          <div class="stat-card gold"><div class="num" id="statPending">0</div><div class="lbl">Pending</div></div>
+          <div class="stat-card green"><div class="num" id="statConfirmed">0</div><div class="lbl">Confirmed</div></div>
+          <div class="stat-card"><div class="num" id="statPaid">0</div><div class="lbl">Paid</div></div>
+        </div>
+
+        <div class="section-card">
+          <h3>Recent Enrollments</h3>
+          <div class="table-wrap">
+            <table class="data" id="recentTable">
+              <thead><tr><th>Date</th><th>Student</th><th>Course</th><th>WhatsApp</th><th>Status</th><th>Action</th></tr></thead>
+              <tbody id="recentBody"></tbody>
+            </table>
+          </div>
+        </div>
+
+        <div class="section-card">
+          <h3>&#x26A0; Important: Connect Formspree</h3>
+          <p style="font-size:.88rem;color:#555;line-height:1.6">
+            Enrollment data above is saved <strong>locally in this browser</strong> when a student submits the form on your website.
+            To receive email notifications and see submissions on any device, you must:
+            <br><br>
+            1. Go to <a href="https://formspree.io" target="_blank" style="color:var(--em);font-weight:600">formspree.io</a> &rarr; Sign Up &rarr; Create a form.<br>
+            2. Copy your Formspree form URL (looks like <code>https://formspree.io/f/xyzabc12</code>).<br>
+            3. Open <strong>index.html</strong> in GitHub, find <code>REPLACE_WITH_YOUR_FORMSPREE_ID</code> and paste your URL.<br>
+            4. In Formspree settings, add your email <strong>muhammadhuzaifa12e4@gmail.com</strong> &mdash; you will now get an email for every enrollment instantly.
+          </p>
+        </div>
+      </div>
+
+      <!-- ENROLLMENTS -->
+      <div class="tab-content" id="tab-enrollments">
+        <h2 style="margin-bottom:20px">All Enrollments</h2>
+        <div class="section-card">
+          <div class="table-wrap">
+            <table class="data" id="allTable">
+              <thead><tr><th>Date</th><th>Student</th><th>Age</th><th>Course</th><th>Country</th><th>Parent</th><th>WhatsApp</th><th>Email</th><th>Status</th><th>&#x270F;</th></tr></thead>
+              <tbody id="allBody"></tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+
+      <!-- NOTICE BOARD -->
+      <div class="tab-content" id="tab-noticeboard">
+        <h2 style="margin-bottom:20px">Notice Board</h2>
+        <div class="section-card">
+          <h3>Add New Notice</h3>
+          <div class="notice-form">
+            <input type="text" id="nTitle" placeholder="Notice title (e.g. Eid Holiday Schedule)">
+            <textarea id="nBody" rows="3" placeholder="Notice details…"></textarea>
+            <button class="btn-add" onclick="addNotice()">+ Add Notice</button>
+          </div>
+        </div>
+        <div class="section-card">
+          <h3>Published Notices</h3>
+          <div class="notices-list" id="noticeList"></div>
+        </div>
+      </div>
+
+      <!-- SETTINGS -->
+      <div class="tab-content" id="tab-settings">
+        <h2 style="margin-bottom:20px">Settings</h2>
+        <div class="section-card">
+          <h3>Contact & Academy Info</h3>
+          <div class="settings-grid">
+            <div class="setting-row">
+              <div><div class="setting-label">WhatsApp Number</div><div class="setting-sub">Shown on website and enrollment form</div></div>
+              <input type="text" id="setWA" value="+92 305 2972902">
+            </div>
+            <div class="setting-row">
+              <div><div class="setting-label">Email Address</div><div class="setting-sub">For contact and Formspree notifications</div></div>
+              <input type="text" id="setEmail" value="muhammadhuzaifa12e4@gmail.com">
+            </div>
+            <div class="setting-row">
+              <div><div class="setting-label">Bank Account (Meezan)</div><div class="setting-sub">Shown to students after enrollment</div></div>
+              <input type="text" id="setBank" value="08020114146360">
+            </div>
+          </div>
+          <button class="btn-save" style="margin-top:18px" onclick="saveSettings()">Save Settings</button>
+        </div>
+
+        <div class="section-card">
+          <h3>Change Admin Password</h3>
+          <div class="settings-grid">
+            <div class="setting-row">
+              <div><div class="setting-label">New Password</div><div class="setting-sub">Replace the default password</div></div>
+              <input type="text" id="newPw" placeholder="Enter new password">
+            </div>
+          </div>
+          <button class="btn-save" style="margin-top:18px" onclick="changePassword()">Update Password</button>
+        </div>
+
+        <div class="section-card">
+          <h3 style="color:var(--danger)">Danger Zone</h3>
+          <div class="setting-row">
+            <div><div class="setting-label">Clear all enrollment data</div><div class="setting-sub">This removes locally saved enrollments. Cannot be undone.</div></div>
+            <button class="btn-danger" onclick="clearData()">Clear Data</button>
+          </div>
+        </div>
+      </div>
+
+    </div><!-- /content -->
+  </div><!-- /main -->
+</div><!-- /admin-wrap -->
+
+<script>
+// ========== CONFIG ==========
+const DEFAULT_PASSWORD = 'alhuzaifa2026'; // آپ یہ بعد میں بدل سکتے ہیں
+
+// ========== LOGIN ==========
+function doLogin(){
+  const pw = document.getElementById('pwInput').value;
+  const savedPw = localStorage.getItem('ah_admin_pw') || DEFAULT_PASSWORD;
+  if(pw === savedPw){
+    localStorage.setItem('ah_admin_session','1');
+    showAdmin();
+  } else {
+    document.getElementById('loginErr').style.display='block';
+  }
+}
+document.getElementById('pwInput').addEventListener('keyup', e => { if(e.key==='Enter') doLogin(); });
+
+function doLogout(){
+  localStorage.removeItem('ah_admin_session');
+  location.reload();
+}
+
+function showAdmin(){
+  document.getElementById('loginWrap').style.display='none';
+  const aw = document.getElementById('adminWrap');
+  aw.style.display='flex';
+  loadDashboard();
+  loadAllEnrollments();
+  loadNotices();
+}
+
+// Auto-login if session exists
+if(localStorage.getItem('ah_admin_session')==='1') showAdmin();
+
+// ========== TABS ==========
+function showTab(name, el){
+  document.querySelectorAll('.tab-content').forEach(t=>t.classList.remove('active'));
+  document.querySelectorAll('.nav-item').forEach(n=>n.classList.remove('active'));
+  document.getElementById('tab-'+name).classList.add('active');
+  el.classList.add('active');
+}
+
+// ========== ENROLLMENTS ==========
+function getEnrollments(){
+  return JSON.parse(localStorage.getItem('ah_enrollments')||'[]');
+}
+function saveEnrollments(arr){
+  localStorage.setItem('ah_enrollments', JSON.stringify(arr));
+}
+
+function badgeHtml(status){
+  const cls = status==='Confirmed'?'confirmed':status==='Paid'?'paid':'pending';
+  return `<span class="badge ${cls}">${status}</span>`;
+}
+
+function loadDashboard(){
+  const data = getEnrollments();
+  document.getElementById('statTotal').textContent = data.length;
+  document.getElementById('statPending').textContent = data.filter(d=>d.status==='Pending').length;
+  document.getElementById('statConfirmed').textContent = data.filter(d=>d.status==='Confirmed').length;
+  document.getElementById('statPaid').textContent = data.filter(d=>d.status==='Paid').length;
+
+  const tb = document.getElementById('recentBody');
+  const recent = data.slice(0,8);
+  tb.innerHTML = recent.length ? recent.map(r=>`
+    <tr>
+      <td>${r.date}</td>
+      <td><strong>${r.studentName}</strong></td>
+      <td>${r.course}</td>
+      <td><a href="https://wa.me/${r.whatsapp.replace(/\D/g,'')}" target="_blank" style="color:var(--em)">${r.whatsapp}</a></td>
+      <td>${badgeHtml(r.status)}</td>
+      <td><button style="background:var(--em);color:#fff;border:none;padding:5px 12px;border-radius:7px;cursor:pointer;font-size:.78rem" onclick="changeStatus(${r.id})">Update</button></td>
+    </tr>`).join('') : '<tr><td colspan="6" style="text-align:center;color:#aaa;padding:22px">No enrollments yet.</td></tr>';
+}
+
+function loadAllEnrollments(){
+  const data = getEnrollments();
+  const tb = document.getElementById('allBody');
+  tb.innerHTML = data.length ? data.map(r=>`
+    <tr>
+      <td>${r.date}</td>
+      <td><strong>${r.studentName}</strong></td>
+      <td>${r.studentAge}</td>
+      <td>${r.course}</td>
+      <td>${r.country}</td>
+      <td>${r.parentName}</td>
+      <td><a href="https://wa.me/${r.whatsapp.replace(/\D/g,'')}" target="_blank" style="color:var(--em)">${r.whatsapp}</a></td>
+      <td>${r.email}</td>
+      <td>${badgeHtml(r.status)}</td>
+      <td><select onchange="updateStatus(${r.id},this.value)" style="border:1px solid #ddd;padding:4px 6px;border-radius:6px;font-size:.78rem">
+        <option value="Pending" ${r.status==='Pending'?'selected':''}>Pending</option>
+        <option value="Confirmed" ${r.status==='Confirmed'?'selected':''}>Confirmed</option>
+        <option value="Paid" ${r.status==='Paid'?'selected':''}>Paid</option>
+      </select></td>
+    </tr>`).join('') : '<tr><td colspan="10" style="text-align:center;color:#aaa;padding:22px">No enrollments yet.</td></tr>';
+}
+
+function updateStatus(id, status){
+  const arr = getEnrollments();
+  const i = arr.findIndex(e=>e.id===id);
+  if(i>-1){ arr[i].status = status; saveEnrollments(arr); loadDashboard(); }
+}
+
+function changeStatus(id){
+  const arr = getEnrollments();
+  const i = arr.findIndex(e=>e.id===id);
+  if(i>-1){
+    const next = {Pending:'Confirmed',Confirmed:'Paid',Paid:'Pending'};
+    arr[i].status = next[arr[i].status];
+    saveEnrollments(arr);
+    loadDashboard();
+    loadAllEnrollments();
+  }
+}
+
+// ========== NOTICES ==========
+function getNotices(){ return JSON.parse(localStorage.getItem('ah_notices')||'[]'); }
+function saveNotices(arr){ localStorage.setItem('ah_notices', JSON.stringify(arr)); }
+
+function addNotice(){
+  const title = document.getElementById('nTitle').value.trim();
+  const body  = document.getElementById('nBody').value.trim();
+  if(!title) return alert('Please enter a title.');
+  const notices = getNotices();
+  notices.unshift({ id:Date.now(), title, body, date: new Date().toLocaleDateString('en-PK') });
+  saveNotices(notices);
+  document.getElementById('nTitle').value='';
+  document.getElementById('nBody').value='';
+  loadNotices();
+}
+
+function deleteNotice(id){
+  if(!confirm('Delete this notice?')) return;
+  saveNotices(getNotices().filter(n=>n.id!==id));
+  loadNotices();
+}
+
+function loadNotices(){
+  const nl = document.getElementById('noticeList');
+  const notices = getNotices();
+  nl.innerHTML = notices.length ? notices.map(n=>`
+    <div class="notice-item">
+      <div>
+        <div class="n-title">${n.title}</div>
+        <div class="n-body">${n.body}</div>
+      </div>
+      <div style="display:flex;flex-direction:column;align-items:flex-end;gap:6px">
+        <span class="n-date">${n.date}</span>
+        <button class="btn-del" onclick="deleteNotice(${n.id})" title="Delete">&#x1F5D1;</button>
+      </div>
+    </div>`).join('') : '<p style="color:#aaa;font-size:.88rem">No notices yet.</p>';
+}
+
+// ========== SETTINGS ==========
+function saveSettings(){
+  localStorage.setItem('ah_wa', document.getElementById('setWA').value);
+  localStorage.setItem('ah_email', document.getElementById('setEmail').value);
+  localStorage.setItem('ah_bank', document.getElementById('setBank').value);
+  alert('Settings saved successfully.');
+}
+
+function changePassword(){
+  const pw = document.getElementById('newPw').value.trim();
+  if(!pw) return alert('Please enter a new password.');
+  localStorage.setItem('ah_admin_pw', pw);
+  alert('Password updated. Next login will require the new password.');
+  document.getElementById('newPw').value='';
+}
+
+function clearData(){
+  if(!confirm('Are you sure? All locally saved enrollment data will be deleted.')) return;
+  localStorage.removeItem('ah_enrollments');
+  loadDashboard(); loadAllEnrollments();
+  alert('Enrollment data cleared.');
+}
+</script>
+</body>
+</html>
