@@ -306,6 +306,30 @@ table.data tr:hover td{background:#f5f9f7;}
         </div>
 
         <div class="section-card">
+          <h3>🌐 Social Media Links</h3>
+          <p style="font-size:.85rem;color:#777;margin-bottom:16px">Add your social media page links. Only the ones you fill in will show on the website footer. Leave blank to hide.</p>
+          <div class="settings-grid">
+            <div class="setting-row">
+              <div><div class="setting-label">📘 Facebook</div><div class="setting-sub">Your Facebook page URL</div></div>
+              <input type="text" id="socFacebook" placeholder="https://facebook.com/yourpage">
+            </div>
+            <div class="setting-row">
+              <div><div class="setting-label">📷 Instagram</div><div class="setting-sub">Your Instagram profile URL</div></div>
+              <input type="text" id="socInstagram" placeholder="https://instagram.com/yourprofile">
+            </div>
+            <div class="setting-row">
+              <div><div class="setting-label">🎵 TikTok</div><div class="setting-sub">Your TikTok profile URL</div></div>
+              <input type="text" id="socTiktok" placeholder="https://tiktok.com/@yourprofile">
+            </div>
+            <div class="setting-row">
+              <div><div class="setting-label">▶️ YouTube</div><div class="setting-sub">Your YouTube channel URL</div></div>
+              <input type="text" id="socYoutube" placeholder="https://youtube.com/@yourchannel">
+            </div>
+          </div>
+          <button class="btn-save" style="margin-top:18px" onclick="saveSocials()">Save Social Links</button>
+        </div>
+
+        <div class="section-card">
           <h3>Change Admin Password</h3>
           <div class="settings-grid">
             <div class="setting-row">
@@ -358,6 +382,7 @@ function showAdmin(){
   loadDashboard();
   loadAllEnrollments();
   loadNotices();
+  loadSocials();
 }
 
 // Auto-login if session exists
@@ -514,6 +539,28 @@ function saveSettings(){
   localStorage.setItem('ah_email', document.getElementById('setEmail').value);
   localStorage.setItem('ah_bank', document.getElementById('setBank').value);
   alert('Settings saved successfully.');
+}
+
+// ========== SOCIAL MEDIA ==========
+function saveSocials(){
+  const s = {
+    facebook:  document.getElementById('socFacebook').value.trim(),
+    instagram: document.getElementById('socInstagram').value.trim(),
+    tiktok:    document.getElementById('socTiktok').value.trim(),
+    youtube:   document.getElementById('socYoutube').value.trim()
+  };
+  localStorage.setItem('ah_socials', JSON.stringify(s));
+  alert('Social media links saved! They will now show on your website footer.');
+}
+
+function loadSocials(){
+  try{
+    const s = JSON.parse(localStorage.getItem('ah_socials')||'{}');
+    if(s.facebook)  document.getElementById('socFacebook').value  = s.facebook;
+    if(s.instagram) document.getElementById('socInstagram').value = s.instagram;
+    if(s.tiktok)    document.getElementById('socTiktok').value     = s.tiktok;
+    if(s.youtube)   document.getElementById('socYoutube').value    = s.youtube;
+  }catch(e){}
 }
 
 function changePassword(){
