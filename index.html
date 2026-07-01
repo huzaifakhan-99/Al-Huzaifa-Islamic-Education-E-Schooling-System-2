@@ -433,9 +433,13 @@
           <span>Al Huzaifa</span>
         </div>
         <p class="footer-brand p">Islamic Education & E-Schooling System. Bringing authentic Islamic education to every Muslim home worldwide.</p>
-        <div class="footer-social">
-          <a href="https://wa.me/923052972902" target="_blank">💬 WhatsApp</a>
-          <a href="mailto:muhammadhuzaifa12e4@gmail.com">✉ Email</a>
+        <div class="footer-social" id="footerSocial">
+          <a href="https://wa.me/923052972902" target="_blank" id="soc-whatsapp">💬 WhatsApp</a>
+          <a href="mailto:muhammadhuzaifa12e4@gmail.com" id="soc-email">✉ Email</a>
+          <a href="#" target="_blank" id="soc-facebook" style="display:none">📘 Facebook</a>
+          <a href="#" target="_blank" id="soc-instagram" style="display:none">📷 Instagram</a>
+          <a href="#" target="_blank" id="soc-tiktok" style="display:none">🎵 TikTok</a>
+          <a href="#" target="_blank" id="soc-youtube" style="display:none">▶️ YouTube</a>
         </div>
       </div>
       <div class="footer-col">
@@ -476,6 +480,17 @@ window.addEventListener('scroll',()=>{document.getElementById('navbar').classLis
 // Mobile nav
 document.getElementById('burger').addEventListener('click',function(){this.classList.toggle('open');document.getElementById('navLinks').classList.toggle('open');});
 document.querySelectorAll('.nav-links a').forEach(a=>a.addEventListener('click',()=>{document.getElementById('navLinks').classList.remove('open');document.getElementById('burger').classList.remove('open');}));
+
+// Load social media links saved from admin panel
+(function loadSocials(){
+  try{
+    const s = JSON.parse(localStorage.getItem('ah_socials')||'{}');
+    [['facebook',s.facebook],['instagram',s.instagram],['tiktok',s.tiktok],['youtube',s.youtube]].forEach(([k,url])=>{
+      const el=document.getElementById('soc-'+k);
+      if(el && url && url.trim()){ el.href=url; el.style.display='inline-flex'; }
+    });
+  }catch(e){}
+})();
 </script>
 </body>
 </html>
