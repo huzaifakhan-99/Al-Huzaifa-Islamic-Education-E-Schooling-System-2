@@ -2,517 +2,581 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="google-site-verification" content="TpOLadkIDv7s4akuTQQOS6-fx9ERMRCfup2C06uqd_U" />
-
-<!-- PRIMARY SEO -->
-<title>Al Huzaifa Islamic Academy | Online Quran, Hifz, Tajweed & School Classes</title>
-<meta name="description" content="Al Huzaifa Islamic Education & E-Schooling System — Online Hifz, Nazra Quran, Tajweed, Basic Islamic Studies & Class KG-5 schooling. Live one-to-one classes with certified ijazah teachers. Book your FREE trial class today!">
-<meta name="keywords" content="online quran academy, online quran classes, hifz online, quran memorization online, nazra quran online, tajweed classes online, basic islamic studies, online madrasa, online madrasah, quran for kids, quran teacher online, learn quran online, Al Huzaifa academy, online islamic school, e-schooling, online quran academy for kids, quran classes for beginners, female quran teacher, quran academy Pakistan, online quran tutor, quran with tajweed">
-<meta name="author" content="Al Huzaifa Islamic Education & E-Schooling System">
-<meta name="robots" content="index, follow, max-image-preview:large">
-<meta name="language" content="English">
-<meta name="revisit-after" content="7 days">
-<meta name="rating" content="general">
-<link rel="canonical" href="https://huzaifakhan-99.github.io/Al-Huzaifa-Islamic-Education-E-Schooling-System/">
-
-<!-- GEO -->
-<meta name="geo.region" content="PK">
-<meta name="geo.placename" content="Pakistan">
-
-<!-- OPEN GRAPH (Facebook / WhatsApp link preview) -->
-<meta property="og:type" content="website">
-<meta property="og:url" content="https://huzaifakhan-99.github.io/Al-Huzaifa-Islamic-Education-E-Schooling-System/">
-<meta property="og:title" content="Al Huzaifa Islamic Academy | Online Quran, Hifz & School Classes">
-<meta property="og:description" content="Online Hifz, Nazra, Tajweed, Islamic Studies & Class KG-5 Schooling. Live classes with certified teachers. Book your FREE trial class today!">
-<meta property="og:image" content="https://images.unsplash.com/photo-1585036156171-384164a8c675?w=1200&q=85&fit=crop">
-<meta property="og:site_name" content="Al Huzaifa Islamic Academy">
-<meta property="og:locale" content="en_US">
-
-<!-- TWITTER -->
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Al Huzaifa Islamic Academy | Online Quran & School Classes">
-<meta name="twitter:description" content="Online Hifz, Nazra, Tajweed, Islamic Studies & Class KG-5. Free trial class available.">
-<meta name="twitter:image" content="https://images.unsplash.com/photo-1585036156171-384164a8c675?w=1200&q=85&fit=crop">
-
-<!-- SCHEMA: Organization + Courses -->
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "EducationalOrganization",
-  "name": "Al Huzaifa Islamic Education & E-Schooling System",
-  "alternateName": "Al Huzaifa Islamic Academy",
-  "description": "Online Islamic academy offering Hifz, Nazra Quran, Tajweed, Basic Islamic Studies and Class KG-5 e-schooling with certified ijazah teachers. Live one-to-one classes worldwide.",
-  "url": "https://huzaifakhan-99.github.io/Al-Huzaifa-Islamic-Education-E-Schooling-System/",
-  "email": "muhammadhuzaifa12e4@gmail.com",
-  "telephone": "+923052972902",
-  "image": "https://images.unsplash.com/photo-1585036156171-384164a8c675?w=1200&q=85&fit=crop",
-  "sameAs": ["https://wa.me/923052972902"],
-  "address": {"@type":"PostalAddress","addressCountry":"PK"},
-  "hasOfferCatalog": {
-    "@type": "OfferCatalog",
-    "name": "Islamic Courses",
-    "itemListElement": [
-      {"@type":"Offer","itemOffered":{"@type":"Course","name":"Hifz-ul-Quran + Tajweed","description":"Complete Quran memorization with Tajweed"},"price":"50","priceCurrency":"USD"},
-      {"@type":"Offer","itemOffered":{"@type":"Course","name":"Nazra Quran + Tajweed","description":"Fluent Quran reading with Tajweed"},"price":"35","priceCurrency":"USD"},
-      {"@type":"Offer","itemOffered":{"@type":"Course","name":"Noorani Qaida","description":"Arabic letters and pronunciation foundation for beginners"},"price":"25","priceCurrency":"USD"},
-      {"@type":"Offer","itemOffered":{"@type":"Course","name":"Basic Islamic Studies","description":"Aqeedah, Fiqh and Seerah for children"},"price":"55","priceCurrency":"USD"},
-      {"@type":"Offer","itemOffered":{"@type":"Course","name":"School Program KG to Class 5","description":"Full primary curriculum with Islamic studies"},"price":"30","priceCurrency":"USD"}
-    ]
-  }
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Admin Panel — Al Huzaifa Academy</title>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink:#0F2A24; --em:#1C5C4A; --em2:#2F7C64;
+  --gold:#C8932B; --gold2:#E6C878;
+  --bg:#F4F6F8; --card:#fff; --line:#E2E8E5;
+  --danger:#C0392B; --success:#27AE60; --warn:#E67E22;
+  --body:'Outfit',sans-serif;
 }
-</script>
+*{box-sizing:border-box;margin:0;padding:0;}
+body{font-family:var(--body);background:var(--bg);color:var(--ink);min-height:100vh;}
+a{color:inherit;text-decoration:none;}
 
-<!-- SCHEMA: FAQ (helps rank with rich snippets) -->
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  "mainEntity": [
-    {"@type":"Question","name":"What do I need for online Quran classes?","acceptedAnswer":{"@type":"Answer","text":"A smartphone, tablet or computer with a stable internet connection. Classes are held over a simple video call — no special software required."}},
-    {"@type":"Question","name":"Is the trial class free?","acceptedAnswer":{"@type":"Answer","text":"Yes, 100% free with no obligation. Every new student gets one full trial class with their matched teacher before any payment."}},
-    {"@type":"Question","name":"Can my child combine Quran classes with the School Program?","acceptedAnswer":{"@type":"Answer","text":"Yes. We build a combined timetable so Quran and school classes never clash."}},
-    {"@type":"Question","name":"How are teachers verified?","acceptedAnswer":{"@type":"Answer","text":"Every Quran teacher holds a recognized ijazah and is tested on Tajweed before teaching. School teachers are verified for qualifications and experience."}}
-  ]
+/* ---- LOGIN ---- */
+.login-wrap{
+  min-height:100vh;display:flex;align-items:center;justify-content:center;
+  background:var(--ink);
 }
-</script>
+.login-box{
+  background:#fff;border-radius:18px;padding:42px 36px;width:100%;max-width:380px;
+  text-align:center;
+}
+.login-logo{
+  width:56px;height:56px;background:var(--ink);border-radius:14px;
+  display:flex;align-items:center;justify-content:center;margin:0 auto 18px;
+}
+.login-logo span{
+  width:26px;height:26px;position:relative;display:inline-block;
+}
+.login-logo span::before,.login-logo span::after{
+  content:"";position:absolute;inset:0;border:2px solid var(--gold2);border-radius:3px;
+}
+.login-logo span::after{transform:rotate(45deg);}
+.login-box h2{font-size:1.25rem;margin-bottom:4px;}
+.login-box p{font-size:.85rem;color:#666;margin-bottom:24px;}
+.login-box input{
+  width:100%;padding:13px 15px;border:1.5px solid var(--line);border-radius:10px;
+  font-family:var(--body);font-size:.95rem;margin-bottom:14px;
+}
+.login-box input:focus{border-color:var(--em);outline:none;}
+.login-box button{
+  width:100%;background:var(--em);color:#fff;border:none;
+  padding:14px;border-radius:10px;font-size:1rem;font-weight:600;
+  cursor:pointer;transition:background .2s;
+}
+.login-box button:hover{background:var(--em2);}
+.login-error{color:var(--danger);font-size:.82rem;margin-top:8px;display:none;}
 
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;0,700;1,400&family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css">
+/* ---- LAYOUT ---- */
+.admin-wrap{display:none;min-height:100vh;flex-direction:column;}
+.top-bar{
+  background:var(--ink);color:#fff;
+  display:flex;align-items:center;justify-content:space-between;
+  padding:0 28px;height:60px;position:sticky;top:0;z-index:10;
+}
+.top-bar-left{display:flex;align-items:center;gap:14px;}
+.top-logo{
+  width:36px;height:36px;background:rgba(255,255,255,.1);
+  border-radius:9px;display:flex;align-items:center;justify-content:center;
+}
+.top-logo span{width:16px;height:16px;position:relative;display:inline-block;}
+.top-logo span::before,.top-logo span::after{
+  content:"";position:absolute;inset:0;border:1.5px solid var(--gold2);border-radius:2px;
+}
+.top-logo span::after{transform:rotate(45deg);}
+.top-title{font-weight:700;font-size:1rem;}
+.top-sub{font-size:.72rem;color:rgba(255,255,255,.55);}
+.btn-logout{
+  background:rgba(255,255,255,.1);color:#fff;border:none;
+  padding:8px 16px;border-radius:8px;cursor:pointer;font-size:.82rem;
+}
+.btn-logout:hover{background:rgba(255,255,255,.18);}
+
+.main{display:flex;flex:1;}
+.sidebar{
+  width:220px;background:var(--card);border-right:1px solid var(--line);
+  padding:20px 0;flex-shrink:0;
+}
+.nav-item{
+  display:flex;align-items:center;gap:10px;
+  padding:11px 22px;font-size:.9rem;font-weight:500;color:#555;
+  cursor:pointer;border-left:3px solid transparent;
+  transition:all .15s;
+}
+.nav-item:hover{background:#f0f4f2;color:var(--em);}
+.nav-item.active{background:#EBF5F1;color:var(--em);border-left-color:var(--em);font-weight:600;}
+.nav-icon{font-size:1rem;width:20px;text-align:center;}
+
+.content{flex:1;padding:28px;overflow-y:auto;}
+
+/* ---- STATS ---- */
+.stats-row{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-bottom:28px;}
+.stat-card{
+  background:var(--card);border:1px solid var(--line);border-radius:14px;
+  padding:20px 18px;
+}
+.stat-card .num{font-size:1.8rem;font-weight:700;color:var(--ink);}
+.stat-card .lbl{font-size:.78rem;color:#777;margin-top:4px;}
+.stat-card.gold .num{color:var(--gold);}
+.stat-card.green .num{color:var(--success);}
+
+/* ---- TABLES ---- */
+.section-card{
+  background:var(--card);border:1px solid var(--line);border-radius:14px;
+  padding:22px 20px;margin-bottom:22px;
+}
+.section-card h3{font-size:1rem;margin-bottom:16px;padding-bottom:10px;border-bottom:1px solid var(--line);}
+.table-wrap{overflow-x:auto;}
+table.data{width:100%;border-collapse:collapse;font-size:.85rem;}
+table.data th{text-align:left;padding:9px 12px;font-size:.72rem;text-transform:uppercase;letter-spacing:.05em;color:#888;background:#f9fafb;border-bottom:1px solid var(--line);}
+table.data td{padding:11px 12px;border-bottom:1px solid var(--line);vertical-align:middle;}
+table.data tr:last-child td{border-bottom:none;}
+table.data tr:hover td{background:#f5f9f7;}
+
+.badge{
+  display:inline-block;padding:3px 10px;border-radius:999px;font-size:.72rem;font-weight:600;
+}
+.badge.pending{background:#FEF3C7;color:#92400E;}
+.badge.confirmed{background:#D1FAE5;color:#065F46;}
+.badge.paid{background:#DBEAFE;color:#1E40AF;}
+.badge.trial{background:#E0E7FF;color:#3730A3;}
+.badge.ended{background:#FEE2E2;color:#991B1B;}
+
+/* ---- NOTICE BOARD ---- */
+.notice-form{display:flex;flex-direction:column;gap:12px;}
+.notice-form input,.notice-form textarea,.notice-form select{
+  padding:11px 13px;border:1.5px solid var(--line);border-radius:9px;
+  font-family:var(--body);font-size:.92rem;
+}
+.notice-form input:focus,.notice-form textarea:focus,.notice-form select:focus{
+  border-color:var(--em);outline:none;
+}
+.btn-add{
+  background:var(--em);color:#fff;border:none;
+  padding:12px 22px;border-radius:9px;cursor:pointer;font-size:.9rem;font-weight:600;
+  align-self:flex-start;
+}
+.btn-add:hover{background:var(--em2);}
+.notices-list{display:flex;flex-direction:column;gap:12px;margin-top:4px;}
+.notice-item{
+  background:#f9fafb;border:1px solid var(--line);border-radius:10px;padding:14px 16px;
+  display:flex;justify-content:space-between;align-items:flex-start;gap:12px;
+}
+.notice-item .n-title{font-weight:600;font-size:.9rem;}
+.notice-item .n-body{font-size:.82rem;color:#555;margin-top:4px;}
+.notice-item .n-date{font-size:.72rem;color:#aaa;white-space:nowrap;}
+.btn-del{background:none;border:none;cursor:pointer;color:var(--danger);font-size:1rem;padding:2px 6px;}
+
+/* ---- SETTINGS ---- */
+.settings-grid{display:flex;flex-direction:column;gap:18px;}
+.setting-row{display:flex;align-items:center;justify-content:space-between;padding:16px 0;border-bottom:1px solid var(--line);}
+.setting-row:last-child{border-bottom:none;}
+.setting-label{font-weight:600;font-size:.92rem;}
+.setting-sub{font-size:.78rem;color:#888;margin-top:3px;}
+.setting-row input[type="text"]{
+  border:1.5px solid var(--line);border-radius:8px;padding:9px 12px;
+  font-family:var(--body);font-size:.9rem;width:240px;
+}
+.setting-row input:focus{border-color:var(--em);outline:none;}
+.btn-save{background:var(--gold);color:var(--ink);border:none;padding:11px 22px;border-radius:9px;cursor:pointer;font-weight:600;font-size:.88rem;}
+.btn-save:hover{background:var(--gold2);}
+.btn-danger{background:var(--danger);color:#fff;border:none;padding:9px 18px;border-radius:9px;cursor:pointer;font-weight:600;font-size:.85rem;}
+
+/* ---- TABS hidden ---- */
+.tab-content{display:none;}
+.tab-content.active{display:block;}
+
+@media(max-width:700px){
+  .sidebar{display:none;}
+  .stats-row{grid-template-columns:repeat(2,1fr);}
+}
+</style>
 </head>
 <body>
 
-<!-- NAVBAR -->
-<header class="navbar" id="navbar">
-  <div class="nav-container">
-    <a href="#" class="nav-brand">
-      <img src="logo.svg" alt="Al Huzaifa Logo" class="nav-logo-img" width="44" height="44">
-      <div class="nav-brand-text">
-        <span class="name">Al Huzaifa</span>
-        <span class="sub">Islamic Education & E-Schooling</span>
-      </div>
-    </a>
-    <nav class="nav-links" id="navLinks">
-      <a href="#about">About</a>
-      <a href="#courses">Courses</a>
-      <a href="#fees">Fees</a>
-      <a href="#teachers">Teachers</a>
-      <a href="#faq">FAQ</a>
-      <a href="enroll.html" class="nav-cta">Enroll Free →</a>
-    </nav>
-    <button class="burger" id="burger"><span></span><span></span><span></span></button>
-  </div>
-</header>
-
-<!-- HERO -->
-<section class="hero" id="top">
-  <div class="hero-bg">
-    <img src="https://images.unsplash.com/photo-1585036156171-384164a8c675?w=1800&q=85&fit=crop" alt="Holy Quran" loading="eager">
-    <div class="hero-overlay"></div>
-  </div>
-  <div class="hero-content container">
-    <div class="hero-badge"><span class="badge-dot"></span> Live Classes · 20+ Countries · Ijazah-Certified Teachers</div>
-    <h1>Learn Qur'an &<br><em>Excel in School</em><br>From Your Home</h1>
-    <p class="hero-desc">Al Huzaifa brings certified Huffaz, Qaris and qualified teachers to your screen — live, one-to-one, structured — for every child, anywhere in the world.</p>
-    <div class="hero-btns">
-      <a href="enroll.html" class="btn-primary">Start Free Trial →</a>
-      <a href="#courses" class="btn-outline">Explore Courses</a>
-    </div>
-    <div class="hero-stats">
-      <div class="stat"><strong>1,200+</strong><span>Students</span></div>
-      <div class="sdiv"></div>
-      <div class="stat"><strong>140+</strong><span>Huffaz Produced</span></div>
-      <div class="sdiv"></div>
-      <div class="stat"><strong>20+</strong><span>Countries</span></div>
-      <div class="sdiv"></div>
-      <div class="stat"><strong>35</strong><span>Qualified Teachers</span></div>
-    </div>
-  </div>
-  <div class="hero-scroll"><div class="scroll-line"></div><div class="scroll-dot"></div></div>
-</section>
-
-<!-- TRUST BAR -->
-<div class="trust-bar">
-  <div class="trust-inner">
-    <span class="trust-item">✦ Ijazah-Certified Teachers</span>
-    <span class="trust-sep">|</span>
-    <span class="trust-item">✦ Free Trial Class</span>
-    <span class="trust-sep">|</span>
-    <span class="trust-item">✦ Monthly Progress Reports</span>
-    <span class="trust-sep">|</span>
-    <span class="trust-item">✦ Flexible Timings Worldwide</span>
-    <span class="trust-sep">|</span>
-    <span class="trust-item">✦ All Ages Welcome</span>
+<!-- ===== LOGIN ===== -->
+<div class="login-wrap" id="loginWrap">
+  <div class="login-box">
+    <div class="login-logo"><span></span></div>
+    <h2>Admin Login</h2>
+    <p>Al Huzaifa Islamic Academy</p>
+    <input type="password" id="pwInput" placeholder="Enter admin password" autocomplete="current-password">
+    <button onclick="doLogin()">Login &rarr;</button>
+    <p class="login-error" id="loginErr">&#x26A0; Incorrect password. Try again.</p>
   </div>
 </div>
 
-<!-- ABOUT -->
-<section class="section about-sec" id="about">
-  <div class="container about-grid">
-    <div class="about-imgs">
-      <div class="about-img-main"><img src="https://images.unsplash.com/photo-1544716278-ca5e3f4abd8c?w=900&q=85&fit=crop" alt="Online Quran learning" loading="lazy"></div>
-      <div class="about-img-float"><img src="https://images.unsplash.com/photo-1609599006353-e629aaabfeae?w=500&q=85&fit=crop" alt="Quran and prayer" loading="lazy"></div>
-      <div class="about-years"><strong>7+</strong><span>Years of<br>Excellence</span></div>
-    </div>
-    <div class="about-copy">
-      <span class="kicker">Who We Are</span>
-      <h2>A Digital Madrasah,<br>Run Like a Real School</h2>
-      <p>Al Huzaifa Islamic Education & E-Schooling System was founded with one mission: bringing authentic, structured Qur'anic and Islamic education to every Muslim home — regardless of where in the world you live.</p>
-      <p>Our teachers hold verified ijazahs, follow structured lesson plans, and send detailed monthly progress reports so parents always know their child is growing in knowledge and character.</p>
-      <div class="about-points">
-        <div class="about-point"><div class="ap-icon">📜</div><div class="ap-text"><strong>Sanad-Connected Teachers</strong><p>Every Qur'an teacher holds a recognized ijazah in Tajweed or Qira'ah — the chain of transmission goes back to the Prophet ﷺ.</p></div></div>
-        <div class="about-point"><div class="ap-icon">👤</div><div class="ap-text"><strong>One-to-One Classes</strong><p>Your child gets full individual attention every session — no crowded virtual classrooms.</p></div></div>
-        <div class="about-point"><div class="ap-icon">📊</div><div class="ap-text"><strong>Real Progress Reports</strong><p>Monthly Qur'an reports and termly school report cards sent directly to parents.</p></div></div>
-        <div class="about-point"><div class="ap-icon">🌍</div><div class="ap-text"><strong>Every Time Zone</strong><p>Morning, evening and weekend slots available for families worldwide.</p></div></div>
-      </div>
-    </div>
-  </div>
-</section>
+<!-- ===== ADMIN PANEL ===== -->
+<div class="admin-wrap" id="adminWrap">
 
-<!-- COURSES -->
-<section class="section courses-sec" id="courses">
-  <div class="container">
-    <span class="kicker center">Our Programs</span>
-    <h2 class="center">Choose the Right Course for Your Child</h2>
-    <p class="section-sub center">Four expertly designed tracks, each with qualified teachers, a structured syllabus, and a free trial class before you commit.</p>
-    <div class="courses-grid">
-
-      <article class="c-card">
-        <div class="c-img">
-          <img src="https://images.unsplash.com/photo-1609599006353-e629aaabfeae?w=700&q=80&fit=crop" alt="Hifz Quran" loading="lazy">
-          <div class="c-img-overlay"></div>
-          <span class="c-badge">Most Popular</span>
-        </div>
-        <div class="c-body">
-          <p class="c-cat">Memorization Track</p>
-          <h3>Hifz-ul-Qur'an + Tajweed</h3>
-          <p>Complete Qur'an memorization with correct Tajweed from day one. Structured daily revision: Sabaq, Sabqi & Manzil system with dedicated tracking.</p>
-          <ul class="c-meta">
-            <li>📅 5–6 days per week</li>
-            <li>⏱ 30–45 minute sessions</li>
-            <li>👦 Ages 6 and above</li>
-          </ul>
-          <div class="c-footer">
-            <div class="c-price">$50<span>/month</span></div>
-            <a href="enroll.html?course=Hifz-ul-Quran+%2B+Tajweed&price=50" class="btn-enroll">Enroll Now →</a>
-          </div>
-        </div>
-      </article>
-
-      <article class="c-card">
-        <div class="c-img">
-          <img src="https://images.unsplash.com/photo-1586769852044-692d6e3703f0?w=700&q=80&fit=crop" alt="Nazra Quran" loading="lazy">
-          <div class="c-img-overlay"></div>
-        </div>
-        <div class="c-body">
-          <p class="c-cat">Reading & Recitation</p>
-          <h3>Nazra Qur'an + Tajweed</h3>
-          <p>Fluent Qur'an reading with correct Makharij and Tajweed rules — from Noorani Qaida through to complete, confident recitation of the entire Qur'an.</p>
-          <ul class="c-meta">
-            <li>📅 5 days per week</li>
-            <li>⏱ 30 minute sessions</li>
-            <li>👦 Ages 5 and above</li>
-          </ul>
-          <div class="c-footer">
-            <div class="c-price">$35<span>/month</span></div>
-            <a href="enroll.html?course=Nazra+Quran+%2B+Tajweed&price=35" class="btn-enroll">Enroll Now →</a>
-          </div>
-        </div>
-      </article>
-
-      <article class="c-card">
-        <div class="c-img">
-          <img src="https://images.unsplash.com/photo-1609599006353-e629aaabfeae?w=700&q=80&fit=crop&sat=-20" alt="Noorani Qaida" loading="lazy" onerror="this.src='https://placehold.co/700x400/1A5C45/E6C878?text=Noorani+Qaida'">
-          <div class="c-img-overlay"></div>
-          <span class="c-badge green">For Beginners</span>
-        </div>
-        <div class="c-body">
-          <p class="c-cat">Foundation Course</p>
-          <h3>Noorani Qaida</h3>
-          <p>The perfect starting point for beginners. Learn Arabic letters, their correct pronunciation (Makharij), joining letters, and basic Tajweed rules — the foundation before Nazra.</p>
-          <ul class="c-meta">
-            <li>📅 5 days per week</li>
-            <li>⏱ 30 minute sessions</li>
-            <li>👦 Ages 4 and above</li>
-          </ul>
-          <div class="c-footer">
-            <div class="c-price">$25<span>/month</span></div>
-            <a href="enroll.html?course=Noorani+Qaida&price=25" class="btn-enroll">Enroll Now →</a>
-          </div>
-        </div>
-      </article>
-
-      <article class="c-card">
-        <div class="c-img">
-          <img src="https://images.unsplash.com/photo-1564769662533-4f00a87b4056?w=700&q=80&fit=crop" alt="Islamic Studies" loading="lazy">
-          <div class="c-img-overlay"></div>
-        </div>
-        <div class="c-body">
-          <p class="c-cat">Aqeedah · Fiqh · Seerah</p>
-          <h3>Basic Islamic Studies</h3>
-          <p>Essential beliefs, daily fiqh (wudu, salah), life of the Prophet ﷺ, du'as and Islamic manners — taught in clear, age-appropriate language every child loves.</p>
-          <ul class="c-meta">
-            <li>📅 3 days per week</li>
-            <li>⏱ 30 minute sessions</li>
-            <li>👦 Ages 5 and above</li>
-          </ul>
-          <div class="c-footer">
-            <div class="c-price">$55<span>/month</span></div>
-            <a href="enroll.html?course=Basic+Islamic+Studies&price=55" class="btn-enroll">Enroll Now →</a>
-          </div>
-        </div>
-      </article>
-
-      <article class="c-card">
-        <div class="c-img">
-          <img src="https://images.unsplash.com/photo-1503676260728-1c00da094a0b?w=700&q=80&fit=crop" alt="School Program" loading="lazy">
-          <div class="c-img-overlay"></div>
-          <span class="c-badge green">Full Curriculum</span>
-        </div>
-        <div class="c-body">
-          <p class="c-cat">E-Schooling Program</p>
-          <h3>School Program — KG to Class 5</h3>
-          <p>Complete primary curriculum: English, Urdu, Mathematics, Science & Islamiyat — taught alongside Qur'an studies with term exams and report cards.</p>
-          <ul class="c-meta">
-            <li>📅 5 days per week</li>
-            <li>📚 Full timetable</li>
-            <li>🎓 KG through Class 5</li>
-          </ul>
-          <div class="c-footer">
-            <div class="c-price">$30–60<span>/month</span></div>
-            <a href="enroll.html?course=School+Program+KG-Class5&price=30-60" class="btn-enroll">Enroll Now →</a>
-          </div>
-        </div>
-      </article>
-
-    </div>
-  </div>
-</section>
-
-<!-- FEES -->
-<section class="section fees-sec" id="fees">
-  <div class="container">
-    <span class="kicker center">Transparent Pricing</span>
-    <h2 class="center">Monthly Fee Structure</h2>
-    <p class="section-sub center">No hidden charges. Pay month-to-month. Sibling discounts available.</p>
-    <div class="fees-grid">
-      <div class="fee-card">
-        <div class="fee-icon">📖</div>
-        <h3>Qur'an & Islamic Courses</h3>
-        <div class="fee-row"><span>Noorani Qaida</span><strong>$25 / mo</strong></div>
-        <div class="fee-row"><span>Nazra Qur'an + Tajweed</span><strong>$35 / mo</strong></div>
-        <div class="fee-row"><span>Hifz-ul-Qur'an + Tajweed</span><strong>$50 / mo</strong></div>
-        <div class="fee-row"><span>Basic Islamic Studies</span><strong>$55 / mo</strong></div>
-        <a href="enroll.html" class="btn-em" style="width:100%;margin-top:8px">Enroll Now →</a>
-      </div>
-      <div class="fee-card featured">
-        <div class="fee-pop">E-Schooling Program</div>
-        <div class="fee-icon">🏫</div>
-        <h3>School Program</h3>
-        <div class="fee-row"><span>KG Class</span><strong>$30 / mo</strong></div>
-        <div class="fee-row"><span>Class 1</span><strong>$40 / mo</strong></div>
-        <div class="fee-row"><span>Class 2</span><strong>$45 / mo</strong></div>
-        <div class="fee-row"><span>Class 3</span><strong>$50 / mo</strong></div>
-        <div class="fee-row"><span>Class 4</span><strong>$55 / mo</strong></div>
-        <div class="fee-row"><span>Class 5</span><strong>$60 / mo</strong></div>
-        <a href="enroll.html?course=School+Program+KG-Class5" class="btn-em" style="width:100%;margin-top:8px">Enroll Now →</a>
-      </div>
-    </div>
-    <p class="fee-note">💡 Combining Qur'an + School? Contact us for a combined timetable and sibling discount.</p>
-  </div>
-</section>
-
-<!-- HOW IT WORKS -->
-<section class="process-sec">
-  <div class="container">
-    <span class="kicker center">Simple Process</span>
-    <h2 class="center">Start Learning in 4 Easy Steps</h2>
-    <div class="steps-row">
-      <div class="step-box"><div class="step-num">01</div><h3>Register Online</h3><p>Fill the enrollment form with your child's details and course choice.</p></div>
-      <div class="step-box"><div class="step-num">02</div><h3>Free Trial Class</h3><p>We match you with the right teacher and book a free, no-obligation trial.</p></div>
-      <div class="step-box"><div class="step-num">03</div><h3>Confirm & Pay</h3><p>Happy with the teacher? Confirm your slot and transfer the first month's fee.</p></div>
-      <div class="step-box"><div class="step-num">04</div><h3>Start Learning</h3><p>Regular live classes begin with full progress tracking from day one.</p></div>
-    </div>
-  </div>
-</section>
-
-<!-- WHY US -->
-<section class="section why-sec">
-  <div class="container why-grid">
-    <div class="why-img-wrap">
-      <img src="https://images.unsplash.com/photo-1491438590914-bc09fcaaf77a?w=900&q=85&fit=crop" alt="Students learning online" loading="lazy">
-      <div class="why-float-card"><div class="big">98%</div><span>Parent<br>Satisfaction<br>Rate</span></div>
-    </div>
-    <div class="why-copy">
-      <span class="kicker">Why Al Huzaifa</span>
-      <h2>The Trusted Choice for Islamic Education Online</h2>
-      <div class="why-points">
-        <div class="why-point"><div class="wp-icon">🏅</div><div class="wp-text"><strong>Verified & Qualified</strong><p>Every teacher is tested on Tajweed, reviewed for qualifications, and background-checked before teaching a single class.</p></div></div>
-        <div class="why-point"><div class="wp-icon">📱</div><div class="wp-text"><strong>Any Device, Anywhere</strong><p>Phone, tablet, or laptop — classes work on any screen. No special downloads. Just a video call link.</p></div></div>
-        <div class="why-point"><div class="wp-icon">📋</div><div class="wp-text"><strong>Real Accountability</strong><p>Monthly Qur'an progress reports and termly school report cards so you always know where your child stands.</p></div></div>
-        <div class="why-point"><div class="wp-icon">🎁</div><div class="wp-text"><strong>Try Before You Commit</strong><p>One complete free trial class with your matched teacher — zero obligation, zero pressure.</p></div></div>
-      </div>
-      <div style="margin-top:28px"><a href="enroll.html" class="btn-em">Get Your Free Trial →</a></div>
-    </div>
-  </div>
-</section>
-
-<!-- TEACHERS -->
-<section class="section teachers-sec" id="teachers">
-  <div class="container">
-    <span class="kicker center">Meet the Team</span>
-    <h2 class="center">Learn from Qualified Scholars & Educators</h2>
-    <p class="section-sub center">All teachers are interviewed, tested, and verified before joining Al Huzaifa.</p>
-    <div class="teachers-grid">
-      <div class="t-card">
-        <div class="t-img"><img src="https://images.unsplash.com/photo-1542816417-0983c9c9ad53?w=400&q=80&fit=crop&crop=faces" alt="Qari Hammad Yousuf - Hifz Teacher" loading="lazy" onerror="this.src='https://placehold.co/400x440/1A5C45/E6C878?text=Qari+Hammad'"></div>
-        <div class="t-body">
-          <h3>Qari Hammad Yousuf</h3>
-          <p class="t-role">Hifz & Tajweed</p>
-          <p>Ijazah in Hafs 'an 'Asim · 12 years teaching experience · 60+ huffaz produced to date.</p>
-          <span class="t-tag">⭐ Senior Hifz Teacher</span>
-        </div>
-      </div>
-      <div class="t-card">
-        <div class="t-img"><img src="https://images.unsplash.com/photo-1591604021695-0c69b7c05981?w=400&q=80&fit=crop&crop=faces" alt="Hafiza Fatima Noor - Nazra Teacher" loading="lazy" onerror="this.src='https://placehold.co/400x440/1A5C45/E6C878?text=Hafiza+Fatima'"></div>
-        <div class="t-body">
-          <h3>Hafiza Fatima Noor</h3>
-          <p class="t-role">Nazra & Tajweed</p>
-          <p>Specialist in Noorani Qaida and children's Tajweed · 8 years experience with young students.</p>
-          <span class="t-tag">⭐ Children's Specialist</span>
-        </div>
-      </div>
-      <div class="t-card">
-        <div class="t-img"><img src="https://images.unsplash.com/photo-1583468982228-19f19164aee2?w=400&q=80&fit=crop&crop=faces" alt="Mufti Abdullah Saeed - Islamic Studies Teacher" loading="lazy" onerror="this.src='https://placehold.co/400x440/1A5C45/E6C878?text=Mufti+Abdullah'"></div>
-        <div class="t-body">
-          <h3>Mufti Abdullah Saeed</h3>
-          <p class="t-role">Islamic Studies</p>
-          <p>Graduate of Dars-e-Nizami · Teaches Aqeedah, Fiqh and Seerah in clear, child-friendly language.</p>
-          <span class="t-tag">⭐ Islamic Scholar</span>
-        </div>
-      </div>
-      <div class="t-card">
-        <div class="t-img"><img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=400&q=80&fit=crop&crop=faces" alt="Ms Sana Akhtar - School Teacher" loading="lazy" onerror="this.src='https://placehold.co/400x440/1A5C45/E6C878?text=Ms+Sana'"></div>
-        <div class="t-body">
-          <h3>Ms. Sana Akhtar</h3>
-          <p class="t-role">School Program (KG–Class 5)</p>
-          <p>B.Ed graduate · 10 years primary school experience in English, Mathematics and Science.</p>
-          <span class="t-tag">⭐ Primary Educator</span>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- TESTIMONIALS -->
-<section class="testi-sec">
-  <div class="testi-bg"><img src="https://images.unsplash.com/photo-1519817914152-22d216bb9170?w=1600&q=70&fit=crop" alt="" loading="lazy"><div class="testi-bg::after"></div></div>
-  <div class="testi-content container">
-    <span class="kicker center" style="color:var(--gold2)">Testimonials</span>
-    <h2 class="center" style="color:#fff">What Our Parents Say</h2>
-    <div class="testi-grid">
-      <div class="testi-card"><div class="stars">★★★★★</div><p>"My son completed his first Juz within four months. The teacher is patient and dedicated, and the monthly reports keep us fully informed. Highly recommend Al Huzaifa!"</p><div class="testi-author"><div class="t-av">AK</div><div><strong>Ahmed Khan</strong><span>Parent — Hifz Program, UK</span></div></div></div>
-      <div class="testi-card"><div class="stars">★★★★★</div><p>"We needed Qur'an classes and school subjects in one place. Al Huzaifa's combined timetable solved it completely. My children are thriving in both. Best decision we made!"</p><div class="testi-author"><div class="t-av">SM</div><div><strong>Sara Mahmood</strong><span>Parent — School Program, Canada</span></div></div></div>
-      <div class="testi-card"><div class="stars">★★★★★</div><p>"The free trial class let us meet the teacher first with no pressure. My daughter now looks forward to every Tajweed lesson — the improvement in her recitation is remarkable!"</p><div class="testi-author"><div class="t-av">FZ</div><div><strong>Fatima Zahra</strong><span>Parent — Nazra Program, UAE</span></div></div></div>
-    </div>
-  </div>
-</section>
-
-<!-- FAQ -->
-<section class="section faq-sec" id="faq">
-  <div class="container">
-    <span class="kicker center">Questions</span>
-    <h2 class="center">Frequently Asked Questions</h2>
-    <div class="faq-list">
-      <details class="faq-item"><summary>What do I need for online classes?</summary><p>A smartphone, tablet or computer with a stable internet connection. Classes are held over a simple video call — no special software required.</p></details>
-      <details class="faq-item"><summary>Is the trial class really completely free?</summary><p>Yes — 100% free, no credit card, no obligation. Every new student gets one full trial class with their matched teacher before any payment is made.</p></details>
-      <details class="faq-item"><summary>Can my child combine Qur'an classes with the School Program?</summary><p>Absolutely. Many of our students do both. We build a combined timetable so Qur'an and school classes never clash and the child gets the best of both.</p></details>
-      <details class="faq-item"><summary>How are teachers verified?</summary><p>Every Qur'an teacher is tested on Tajweed and must show a valid ijazah. School teachers are verified for qualifications and experience. We also do reference checks before anyone joins our team.</p></details>
-      <details class="faq-item"><summary>What if the teacher is not a good fit for my child?</summary><p>No problem at all. We'll rematch your child with a different teacher at no extra cost until you're completely satisfied with the pairing.</p></details>
-      <details class="faq-item"><summary>How does payment work?</summary><p>Monthly fee via Meezan Bank transfer (Account: 08020114146360 — Muhammad Huzaifa). After payment, upload the screenshot directly on our enrollment page or send via WhatsApp.</p></details>
-    </div>
-  </div>
-</section>
-
-<!-- CTA BANNER -->
-<section style="background:var(--em);padding:64px 0;text-align:center;">
-  <div class="container">
-    <h2 style="color:#fff;margin-bottom:12px;font-size:clamp(1.5rem,3vw,2.2rem)">Ready to Start Your Child's Qur'anic Journey?</h2>
-    <p style="color:rgba(255,255,255,.75);margin-bottom:28px;max-width:480px;margin-left:auto;margin-right:auto;">Join 1,200+ students worldwide. Free trial class, no commitment required.</p>
-    <a href="enroll.html" class="btn-primary" style="font-size:1rem;padding:16px 36px">Enroll for Free Trial →</a>
-  </div>
-</section>
-
-<!-- FOOTER -->
-<footer class="site-footer">
-  <div class="footer-top">
-    <div class="container footer-grid">
+  <!-- Top bar -->
+  <div class="top-bar">
+    <div class="top-bar-left">
+      <div class="top-logo"><span></span></div>
       <div>
-        <div class="footer-brand-logo">
-          <div class="f-icon"><img src="logo.svg" alt="Al Huzaifa Logo" width="38" height="38"></div>
-          <span>Al Huzaifa</span>
-        </div>
-        <p class="footer-brand p">Islamic Education & E-Schooling System. Bringing authentic Islamic education to every Muslim home worldwide.</p>
-        <div class="footer-social" id="footerSocial">
-          <a href="https://wa.me/923052972902" target="_blank" id="soc-whatsapp">💬 WhatsApp</a>
-          <a href="mailto:muhammadhuzaifa12e4@gmail.com" id="soc-email">✉ Email</a>
-          <a href="#" target="_blank" id="soc-facebook" style="display:none">📘 Facebook</a>
-          <a href="#" target="_blank" id="soc-instagram" style="display:none">📷 Instagram</a>
-          <a href="#" target="_blank" id="soc-tiktok" style="display:none">🎵 TikTok</a>
-          <a href="#" target="_blank" id="soc-youtube" style="display:none">▶️ YouTube</a>
-        </div>
-      </div>
-      <div class="footer-col">
-        <h4>Programs</h4>
-        <a href="enroll.html?course=Hifz-ul-Quran+%2B+Tajweed&price=50">Hifz-ul-Qur'an + Tajweed</a>
-        <a href="enroll.html?course=Nazra+Quran+%2B+Tajweed&price=35">Nazra Qur'an + Tajweed</a>
-        <a href="enroll.html?course=Basic+Islamic+Studies&price=55">Basic Islamic Studies</a>
-        <a href="enroll.html?course=School+Program+KG-Class5">School Program (KG–5)</a>
-      </div>
-      <div class="footer-col">
-        <h4>Academy</h4>
-        <a href="#about">About Us</a>
-        <a href="#teachers">Our Teachers</a>
-        <a href="#fees">Fee Structure</a>
-        <a href="#faq">FAQ</a>
-        <a href="admin.html" style="opacity:.4;font-size:.8rem">Admin Panel</a>
-      </div>
-      <div class="footer-col">
-        <h4>Contact Us</h4>
-        <a href="mailto:muhammadhuzaifa12e4@gmail.com">muhammadhuzaifa12e4@gmail.com</a>
-        <a href="https://wa.me/923052972902" target="_blank">+92 305 2972902 (WhatsApp)</a>
-        <span>Online · Available Worldwide</span>
+        <div class="top-title">Al Huzaifa Academy</div>
+        <div class="top-sub">Admin Panel</div>
       </div>
     </div>
+    <button class="btn-logout" onclick="doLogout()">Logout</button>
   </div>
-  <div class="footer-bottom"><div class="container"><p>© 2026 Al Huzaifa Islamic Education & E-Schooling System. All rights reserved.</p><p style="font-size:.75rem;color:rgba(255,255,255,.3)">Designed with ♥ for Islamic Education</p></div></div>
-</footer>
 
-<!-- FLOATING WHATSAPP -->
-<a href="https://wa.me/923052972902?text=Assalamu%20Alaikum%2C%20I%27d%20like%20to%20know%20more%20about%20Al%20Huzaifa%20Academy." class="wa-float" target="_blank" aria-label="WhatsApp">
-  <svg viewBox="0 0 32 32" width="30" height="30"><path fill="currentColor" d="M16.04 2.67C8.85 2.67 3.02 8.5 3.02 15.69c0 2.46.66 4.78 1.86 6.78L3 29.33l7.04-1.85a13 13 0 0 0 6 1.5h.01c7.19 0 13.02-5.83 13.02-13.02 0-3.48-1.36-6.75-3.82-9.2a12.95 12.95 0 0 0-9.2-3.82zm0 23.5h-.01a10.8 10.8 0 0 1-5.5-1.5l-.39-.23-4.18 1.1 1.12-4.08-.26-.42a10.79 10.79 0 0 1-1.66-5.76c0-5.97 4.86-10.83 10.84-10.83a10.78 10.78 0 0 1 7.66 3.18 10.77 10.77 0 0 1 3.18 7.66c0 5.98-4.86 10.84-10.83 10.84zm5.94-8.12c-.32-.16-1.92-.95-2.22-1.06-.3-.11-.52-.16-.74.16-.22.32-.85 1.06-1.04 1.27-.19.22-.38.24-.7.08-.32-.16-1.36-.5-2.58-1.6-.95-.85-1.6-1.9-1.78-2.22-.19-.32-.02-.49.14-.65.14-.14.32-.38.48-.56.16-.19.21-.32.32-.54.11-.22.05-.41-.03-.57-.08-.16-.74-1.78-1.01-2.44-.27-.64-.54-.55-.74-.56h-.63c-.22 0-.57.08-.87.41-.3.32-1.14 1.11-1.14 2.72 0 1.6 1.17 3.15 1.33 3.37.16.22 2.3 3.51 5.57 4.92.78.34 1.39.54 1.86.69.78.25 1.49.21 2.05.13.63-.09 1.92-.78 2.19-1.54.27-.76.27-1.41.19-1.54-.08-.14-.3-.22-.62-.38z"/></svg>
-  <span class="wa-pulse"></span>
-</a>
+  <div class="main">
+    <!-- Sidebar -->
+    <div class="sidebar">
+      <div class="nav-item active" onclick="showTab('dashboard',this)"><span class="nav-icon">&#x1F4CA;</span> Dashboard</div>
+      <div class="nav-item" onclick="showTab('enrollments',this)"><span class="nav-icon">&#x1F393;</span> Enrollments</div>
+      <div class="nav-item" onclick="showTab('noticeboard',this)"><span class="nav-icon">&#x1F4CB;</span> Notice Board</div>
+      <div class="nav-item" onclick="showTab('settings',this)"><span class="nav-icon">&#x2699;&#xFE0F;</span> Settings</div>
+    </div>
+
+    <!-- Content -->
+    <div class="content">
+
+      <!-- DASHBOARD -->
+      <div class="tab-content active" id="tab-dashboard">
+        <h2 style="margin-bottom:20px">Dashboard</h2>
+        <div id="trialAlert" style="display:none;background:#FEF3C7;border:1.5px solid #E67E22;color:#92400E;border-radius:12px;padding:14px 18px;margin-bottom:20px;font-size:.9rem"></div>
+        <div class="stats-row">
+          <div class="stat-card"><div class="num" id="statTotal">0</div><div class="lbl">Total Enrollments</div></div>
+          <div class="stat-card gold"><div class="num" id="statPending">0</div><div class="lbl">Pending / Trial</div></div>
+          <div class="stat-card green"><div class="num" id="statConfirmed">0</div><div class="lbl">Confirmed</div></div>
+          <div class="stat-card"><div class="num" id="statPaid">0</div><div class="lbl">Paid</div></div>
+        </div>
+
+        <div class="section-card">
+          <h3>Recent Enrollments</h3>
+          <div class="table-wrap">
+            <table class="data" id="recentTable">
+              <thead><tr><th>Date</th><th>Student</th><th>Course</th><th>WhatsApp</th><th>Status</th><th>Action</th></tr></thead>
+              <tbody id="recentBody"></tbody>
+            </table>
+          </div>
+        </div>
+
+        <div class="section-card">
+          <h3>&#x26A0; Important: Connect Formspree</h3>
+          <p style="font-size:.88rem;color:#555;line-height:1.6">
+            Enrollment data above is saved <strong>locally in this browser</strong> when a student submits the form on your website.
+            To receive email notifications and see submissions on any device, you must:
+            <br><br>
+            1. Go to <a href="https://formspree.io" target="_blank" style="color:var(--em);font-weight:600">formspree.io</a> &rarr; Sign Up &rarr; Create a form.<br>
+            2. Copy your Formspree form URL (looks like <code>https://formspree.io/f/xyzabc12</code>).<br>
+            3. Open <strong>index.html</strong> in GitHub, find <code>REPLACE_WITH_YOUR_FORMSPREE_ID</code> and paste your URL.<br>
+            4. In Formspree settings, add your email <strong>muhammadhuzaifa12e4@gmail.com</strong> &mdash; you will now get an email for every enrollment instantly.
+          </p>
+        </div>
+      </div>
+
+      <!-- ENROLLMENTS -->
+      <div class="tab-content" id="tab-enrollments">
+        <h2 style="margin-bottom:20px">All Enrollments</h2>
+        <div class="section-card">
+          <div class="table-wrap">
+            <table class="data" id="allTable">
+              <thead><tr><th>Date</th><th>Student</th><th>Age</th><th>Course</th><th>Country</th><th>Parent</th><th>WhatsApp</th><th>Email</th><th>Status</th><th>&#x270F;</th></tr></thead>
+              <tbody id="allBody"></tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+
+      <!-- NOTICE BOARD -->
+      <div class="tab-content" id="tab-noticeboard">
+        <h2 style="margin-bottom:20px">Notice Board</h2>
+        <div class="section-card">
+          <h3>Add New Notice</h3>
+          <div class="notice-form">
+            <input type="text" id="nTitle" placeholder="Notice title (e.g. Eid Holiday Schedule)">
+            <textarea id="nBody" rows="3" placeholder="Notice details…"></textarea>
+            <button class="btn-add" onclick="addNotice()">+ Add Notice</button>
+          </div>
+        </div>
+        <div class="section-card">
+          <h3>Published Notices</h3>
+          <div class="notices-list" id="noticeList"></div>
+        </div>
+      </div>
+
+      <!-- SETTINGS -->
+      <div class="tab-content" id="tab-settings">
+        <h2 style="margin-bottom:20px">Settings</h2>
+        <div class="section-card">
+          <h3>Contact & Academy Info</h3>
+          <div class="settings-grid">
+            <div class="setting-row">
+              <div><div class="setting-label">WhatsApp Number</div><div class="setting-sub">Shown on website and enrollment form</div></div>
+              <input type="text" id="setWA" value="+92 305 2972902">
+            </div>
+            <div class="setting-row">
+              <div><div class="setting-label">Email Address</div><div class="setting-sub">For contact and Formspree notifications</div></div>
+              <input type="text" id="setEmail" value="muhammadhuzaifa12e4@gmail.com">
+            </div>
+            <div class="setting-row">
+              <div><div class="setting-label">Bank Account (Meezan)</div><div class="setting-sub">Shown to students after enrollment</div></div>
+              <input type="text" id="setBank" value="08020114146360">
+            </div>
+          </div>
+          <button class="btn-save" style="margin-top:18px" onclick="saveSettings()">Save Settings</button>
+        </div>
+
+        <div class="section-card">
+          <h3>🌐 Social Media Links</h3>
+          <p style="font-size:.85rem;color:#777;margin-bottom:16px">Add your social media page links. Only the ones you fill in will show on the website footer. Leave blank to hide.</p>
+          <div class="settings-grid">
+            <div class="setting-row">
+              <div><div class="setting-label">📘 Facebook</div><div class="setting-sub">Your Facebook page URL</div></div>
+              <input type="text" id="socFacebook" placeholder="https://facebook.com/yourpage">
+            </div>
+            <div class="setting-row">
+              <div><div class="setting-label">📷 Instagram</div><div class="setting-sub">Your Instagram profile URL</div></div>
+              <input type="text" id="socInstagram" placeholder="https://instagram.com/yourprofile">
+            </div>
+            <div class="setting-row">
+              <div><div class="setting-label">🎵 TikTok</div><div class="setting-sub">Your TikTok profile URL</div></div>
+              <input type="text" id="socTiktok" placeholder="https://tiktok.com/@yourprofile">
+            </div>
+            <div class="setting-row">
+              <div><div class="setting-label">▶️ YouTube</div><div class="setting-sub">Your YouTube channel URL</div></div>
+              <input type="text" id="socYoutube" placeholder="https://youtube.com/@yourchannel">
+            </div>
+          </div>
+          <button class="btn-save" style="margin-top:18px" onclick="saveSocials()">Save Social Links</button>
+        </div>
+
+        <div class="section-card">
+          <h3>Change Admin Password</h3>
+          <div class="settings-grid">
+            <div class="setting-row">
+              <div><div class="setting-label">New Password</div><div class="setting-sub">Replace the default password</div></div>
+              <input type="text" id="newPw" placeholder="Enter new password">
+            </div>
+          </div>
+          <button class="btn-save" style="margin-top:18px" onclick="changePassword()">Update Password</button>
+        </div>
+
+        <div class="section-card">
+          <h3 style="color:var(--danger)">Danger Zone</h3>
+          <div class="setting-row">
+            <div><div class="setting-label">Clear all enrollment data</div><div class="setting-sub">This removes locally saved enrollments. Cannot be undone.</div></div>
+            <button class="btn-danger" onclick="clearData()">Clear Data</button>
+          </div>
+        </div>
+      </div>
+
+    </div><!-- /content -->
+  </div><!-- /main -->
+</div><!-- /admin-wrap -->
 
 <script>
-// Navbar scroll
-window.addEventListener('scroll',()=>{document.getElementById('navbar').classList.toggle('scrolled',window.scrollY>40);});
-// Mobile nav
-document.getElementById('burger').addEventListener('click',function(){this.classList.toggle('open');document.getElementById('navLinks').classList.toggle('open');});
-document.querySelectorAll('.nav-links a').forEach(a=>a.addEventListener('click',()=>{document.getElementById('navLinks').classList.remove('open');document.getElementById('burger').classList.remove('open');}));
+// ========== CONFIG ==========
+const DEFAULT_PASSWORD = 'alhuzaifa2026'; // آپ یہ بعد میں بدل سکتے ہیں
 
-// Load social media links saved from admin panel
-(function loadSocials(){
+// ========== LOGIN ==========
+function doLogin(){
+  const pw = document.getElementById('pwInput').value;
+  const savedPw = localStorage.getItem('ah_admin_pw') || DEFAULT_PASSWORD;
+  if(pw === savedPw){
+    localStorage.setItem('ah_admin_session','1');
+    showAdmin();
+  } else {
+    document.getElementById('loginErr').style.display='block';
+  }
+}
+document.getElementById('pwInput').addEventListener('keyup', e => { if(e.key==='Enter') doLogin(); });
+
+function doLogout(){
+  localStorage.removeItem('ah_admin_session');
+  location.reload();
+}
+
+function showAdmin(){
+  document.getElementById('loginWrap').style.display='none';
+  const aw = document.getElementById('adminWrap');
+  aw.style.display='flex';
+  loadDashboard();
+  loadAllEnrollments();
+  loadNotices();
+  loadSocials();
+}
+
+// Auto-login if session exists
+if(localStorage.getItem('ah_admin_session')==='1') showAdmin();
+
+// ========== TABS ==========
+function showTab(name, el){
+  document.querySelectorAll('.tab-content').forEach(t=>t.classList.remove('active'));
+  document.querySelectorAll('.nav-item').forEach(n=>n.classList.remove('active'));
+  document.getElementById('tab-'+name).classList.add('active');
+  el.classList.add('active');
+}
+
+// ========== ENROLLMENTS ==========
+function getEnrollments(){
+  return JSON.parse(localStorage.getItem('ah_enrollments')||'[]');
+}
+function saveEnrollments(arr){
+  localStorage.setItem('ah_enrollments', JSON.stringify(arr));
+}
+
+function badgeHtml(status){
+  let cls='pending';
+  if(status==='Confirmed') cls='confirmed';
+  else if(status==='Paid') cls='paid';
+  else if(status==='Free Trial') cls='trial';
+  else if(status==='Trial Ended') cls='ended';
+  return `<span class="badge ${cls}">${status}</span>`;
+}
+
+// Check for expired free trials and flag them
+function checkExpiredTrials(){
+  const arr=getEnrollments(); let changed=false; const now=new Date();
+  arr.forEach(e=>{
+    if(e.status==='Free Trial' && e.trialEnd && new Date(e.trialEnd) < now){
+      e.status='Trial Ended'; changed=true;
+    }
+  });
+  if(changed) saveEnrollments(arr);
+  // Show alert banner if any trials ended
+  const ended=arr.filter(e=>e.status==='Trial Ended');
+  const banner=document.getElementById('trialAlert');
+  if(banner){
+    if(ended.length){
+      banner.style.display='block';
+      banner.innerHTML='⏰ <strong>'+ended.length+' free trial(s) have ended.</strong> Contact these students to collect payment: '+
+        ended.map(e=>e.studentName+' ('+e.whatsapp+')').join(', ');
+    } else { banner.style.display='none'; }
+  }
+}
+
+function loadDashboard(){
+  checkExpiredTrials();
+  const data = getEnrollments();
+  document.getElementById('statTotal').textContent = data.length;
+  document.getElementById('statPending').textContent = data.filter(d=>d.status==='Pending'||d.status==='Free Trial').length;
+  document.getElementById('statConfirmed').textContent = data.filter(d=>d.status==='Confirmed'||d.status==='Trial Ended').length;
+  document.getElementById('statPaid').textContent = data.filter(d=>d.status==='Paid').length;
+
+  const tb = document.getElementById('recentBody');
+  const recent = data.slice(0,8);
+  tb.innerHTML = recent.length ? recent.map(r=>`
+    <tr>
+      <td>${r.date}</td>
+      <td><strong>${r.studentName}</strong></td>
+      <td>${r.course}</td>
+      <td><a href="https://wa.me/${r.whatsapp.replace(/\D/g,'')}" target="_blank" style="color:var(--em)">${r.whatsapp}</a></td>
+      <td>${badgeHtml(r.status)}</td>
+      <td><button style="background:var(--em);color:#fff;border:none;padding:5px 12px;border-radius:7px;cursor:pointer;font-size:.78rem" onclick="changeStatus(${r.id})">Update</button></td>
+    </tr>`).join('') : '<tr><td colspan="6" style="text-align:center;color:#aaa;padding:22px">No enrollments yet.</td></tr>';
+}
+
+function loadAllEnrollments(){
+  const data = getEnrollments();
+  const tb = document.getElementById('allBody');
+  tb.innerHTML = data.length ? data.map(r=>`
+    <tr>
+      <td>${r.date}</td>
+      <td><strong>${r.studentName}</strong></td>
+      <td>${r.studentAge}</td>
+      <td>${r.course}</td>
+      <td>${r.country}</td>
+      <td>${r.parentName}</td>
+      <td><a href="https://wa.me/${r.whatsapp.replace(/\D/g,'')}" target="_blank" style="color:var(--em)">${r.whatsapp}</a></td>
+      <td>${r.email}</td>
+      <td>${badgeHtml(r.status)}</td>
+      <td><select onchange="updateStatus(${r.id},this.value)" style="border:1px solid #ddd;padding:4px 6px;border-radius:6px;font-size:.78rem">
+        <option value="Pending" ${r.status==='Pending'?'selected':''}>Pending</option>
+        <option value="Confirmed" ${r.status==='Confirmed'?'selected':''}>Confirmed</option>
+        <option value="Paid" ${r.status==='Paid'?'selected':''}>Paid</option>
+      </select></td>
+    </tr>`).join('') : '<tr><td colspan="10" style="text-align:center;color:#aaa;padding:22px">No enrollments yet.</td></tr>';
+}
+
+function updateStatus(id, status){
+  const arr = getEnrollments();
+  const i = arr.findIndex(e=>e.id===id);
+  if(i>-1){ arr[i].status = status; saveEnrollments(arr); loadDashboard(); }
+}
+
+function changeStatus(id){
+  const arr = getEnrollments();
+  const i = arr.findIndex(e=>e.id===id);
+  if(i>-1){
+    const next = {Pending:'Confirmed',Confirmed:'Paid',Paid:'Pending'};
+    arr[i].status = next[arr[i].status];
+    saveEnrollments(arr);
+    loadDashboard();
+    loadAllEnrollments();
+  }
+}
+
+// ========== NOTICES ==========
+function getNotices(){ return JSON.parse(localStorage.getItem('ah_notices')||'[]'); }
+function saveNotices(arr){ localStorage.setItem('ah_notices', JSON.stringify(arr)); }
+
+function addNotice(){
+  const title = document.getElementById('nTitle').value.trim();
+  const body  = document.getElementById('nBody').value.trim();
+  if(!title) return alert('Please enter a title.');
+  const notices = getNotices();
+  notices.unshift({ id:Date.now(), title, body, date: new Date().toLocaleDateString('en-PK') });
+  saveNotices(notices);
+  document.getElementById('nTitle').value='';
+  document.getElementById('nBody').value='';
+  loadNotices();
+}
+
+function deleteNotice(id){
+  if(!confirm('Delete this notice?')) return;
+  saveNotices(getNotices().filter(n=>n.id!==id));
+  loadNotices();
+}
+
+function loadNotices(){
+  const nl = document.getElementById('noticeList');
+  const notices = getNotices();
+  nl.innerHTML = notices.length ? notices.map(n=>`
+    <div class="notice-item">
+      <div>
+        <div class="n-title">${n.title}</div>
+        <div class="n-body">${n.body}</div>
+      </div>
+      <div style="display:flex;flex-direction:column;align-items:flex-end;gap:6px">
+        <span class="n-date">${n.date}</span>
+        <button class="btn-del" onclick="deleteNotice(${n.id})" title="Delete">&#x1F5D1;</button>
+      </div>
+    </div>`).join('') : '<p style="color:#aaa;font-size:.88rem">No notices yet.</p>';
+}
+
+// ========== SETTINGS ==========
+function saveSettings(){
+  localStorage.setItem('ah_wa', document.getElementById('setWA').value);
+  localStorage.setItem('ah_email', document.getElementById('setEmail').value);
+  localStorage.setItem('ah_bank', document.getElementById('setBank').value);
+  alert('Settings saved successfully.');
+}
+
+// ========== SOCIAL MEDIA ==========
+function saveSocials(){
+  const s = {
+    facebook:  document.getElementById('socFacebook').value.trim(),
+    instagram: document.getElementById('socInstagram').value.trim(),
+    tiktok:    document.getElementById('socTiktok').value.trim(),
+    youtube:   document.getElementById('socYoutube').value.trim()
+  };
+  localStorage.setItem('ah_socials', JSON.stringify(s));
+  alert('Social media links saved! They will now show on your website footer.');
+}
+
+function loadSocials(){
   try{
     const s = JSON.parse(localStorage.getItem('ah_socials')||'{}');
-    [['facebook',s.facebook],['instagram',s.instagram],['tiktok',s.tiktok],['youtube',s.youtube]].forEach(([k,url])=>{
-      const el=document.getElementById('soc-'+k);
-      if(el && url && url.trim()){ el.href=url; el.style.display='inline-flex'; }
-    });
+    if(s.facebook)  document.getElementById('socFacebook').value  = s.facebook;
+    if(s.instagram) document.getElementById('socInstagram').value = s.instagram;
+    if(s.tiktok)    document.getElementById('socTiktok').value     = s.tiktok;
+    if(s.youtube)   document.getElementById('socYoutube').value    = s.youtube;
   }catch(e){}
-})();
+}
+
+function changePassword(){
+  const pw = document.getElementById('newPw').value.trim();
+  if(!pw) return alert('Please enter a new password.');
+  localStorage.setItem('ah_admin_pw', pw);
+  alert('Password updated. Next login will require the new password.');
+  document.getElementById('newPw').value='';
+}
+
+function clearData(){
+  if(!confirm('Are you sure? All locally saved enrollment data will be deleted.')) return;
+  localStorage.removeItem('ah_enrollments');
+  loadDashboard(); loadAllEnrollments();
+  alert('Enrollment data cleared.');
+}
 </script>
 </body>
 </html>
